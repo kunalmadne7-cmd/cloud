@@ -1,0 +1,95 @@
+============================================================
+FINAL GLOBAL QUALITY AUDIT
+============================================================
+
+Before finalizing the deck, inspect ALL TEN SLIDES as one presentation.
+
+Check the story:
+Slide 1: What does not reconcile?
+Slide 2: Are the assets actually evidenced?
+Slide 3: Where did other project money go?
+Slide 4: Can every rupee be reconciled?
+Slide 5: What does this do to earnings?
+Slide 6: What should the lender do?
+
+Check:
+• No text below 11 pt
+• Body 13–16 pt wherever possible
+• Titles 28–32 pt
+• Key numbers 34–48 pt
+• Strict monochromatic navy / blue-grey palette
+• No photographs
+• No AI-generated images
+• No random icon styles
+• One dominant visual argument per slide
+• Simple English explanations
+• Strong slide-to-slide transition
+
+NUMERICAL CHECK:
+₹567.8 + ₹102.5 + ₹168.0 + ₹13.7 + ₹46.0 + ₹28.0 + ₹41.0 + ₹43.0 + ₹11.0 + ₹12.0 = ₹1,033.0 cr
+
+₹46 + ₹28 + ₹41 + ₹43 + ₹11 + ₹12 = ₹181 cr
+
+6,400 − 4,704 = 1,696
+
+1,696 × ₹12.07 lakh ≈ ₹204.7 cr
+
+₹34.2 cr − ₹40 cr = −₹5.8 cr
+
+₹168 cr + ₹43 cr = ₹211 cr
+
+₹5 cr + ₹211 cr = ₹216 cr
+
+EVIDENCE CHECK:
+• 1,696 is NOT described as nonexistent.
+• ₹204.7 cr is NOT described as proven loss.
+• Wellray is NOT called a shell company.
+• ₹181 cr is NOT automatically labelled fraud.
+• ₹40 cr SwiftRide income is NOT called fabricated.
+• ₹168 cr Wellray is NOT included in ₹181 cr.
+• ₹13.7 cr insurance/registration is NOT included in the strict ₹181 cr headline.
+• "Outside stated purpose" is not presented as automatically fraudulent.
+• Management's strongest reasonable defence is shown.
+• Unverified items remain clearly marked.
+
+FINAL JUDGE TEST:
+Can a judge reconstruct:
+1. What was financed?
+2. What assets are evidenced?
+3. What remains unresolved?
+4. Where did the ₹1,033 cr go?
+5. Why does ₹181 cr matter?
+6. Why does Wellray matter?
+7. Why does the ₹40 cr fee matter?
+8. How were the key calculations derived?
+9. What is fact versus inference?
+10. Why does the lender need to investigate?
+
+If any answer is NO:
+REVISE THE RELEVANT SLIDE.
+
+Do NOT sacrifice explanatory clarity for visual beauty.
+
+FINAL CREATIVE STANDARD:
+FORENSIC
+PRECISE
+DENSE
+AUDITABLE
+PREMIUM
+MONOCHROMATIC
+EVIDENCE-LED
+EASY TO UNDERSTAND
+DECISION-ORIENTED
+
+The finished deck must feel like:
+"An investigation presented to a credit committee."
+
+NOT:
+"An AI-generated MBA infographic."
+
+The strongest visual principle is:
+FEWER DECORATIVE ELEMENTS.
+MORE EVIDENCE.
+MORE EXPLANATION.
+BETTER HIERARCHY.
+CLEARER STORY.

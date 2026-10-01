@@ -1,0 +1,450 @@
+CREATE A PREMIUM 10-SLIDE MBA CASE COMPETITION PRESENTATION FOR THE GREENDRIVE ENGINEERING LTD. FORENSIC LENDING CASE.
+
+IMPORTANT:
+These are prompts for YOU, ChatGPT, to create the ACTUAL VISUAL INFOGRAPHIC SLIDES.
+
+Create 10 separate 16:9 widescreen PowerPoint-resolution infographic slides.
+
+The deck contains:
+• 6 core slides
+• 4 appendix slides
+
+The presentation must feel like ONE continuous forensic investigation.
+
+The audience should feel that the investigation is progressively moving from:
+
+WHAT WAS FINANCED?
+→ WHAT ASSETS ARE ACTUALLY EVIDENCED?
+→ WHERE DID THE OTHER PROJECT MONEY GO?
+→ CAN EVERY RUPEE BE RECONCILED?
+→ WHAT DOES THIS DO TO REPORTED PERFORMANCE?
+→ WHAT SHOULD THE LENDER DO?
+
+Do NOT create ten independent infographic pages.
+
+The deck must tell one continuous story.
+
+============================================================
+1. NON-NEGOTIABLE DESIGN DIRECTION
+============================================================
+
+Create a premium visual language combining:
+• forensic accounting
+• credit committee analysis
+• investment banking
+• top-tier strategy consulting
+• investigative evidence presentation
+
+The deck should look like it was created by a highly experienced forensic lending / transaction advisory team.
+
+It must NOT look like:
+• a generic MBA presentation
+• a Canva template
+• an AI-generated PowerPoint
+• a marketing deck
+• a collection of unrelated infographics
+• a dashboard with dozens of equal-sized cards
+
+The design should communicate:
+PRECISION
+EVIDENCE
+CONTROL
+INVESTIGATION
+CREDIBILITY
+
+============================================================
+2. STRICT MONOCHROMATIC COLOUR SYSTEM
+============================================================
+
+USE A STRICT MONOCHROMATIC COLOUR PALETTE.
+
+Use ONLY tonal variations of ONE navy / blue-grey colour family:
+• near-black navy
+• deep navy
+• medium navy
+• slate blue-grey
+• light blue-grey
+• very pale blue-grey
+• off-white
+• white
+
+NO red.
+NO orange.
+NO yellow.
+NO green.
+NO purple.
+NO secondary accent colour.
+
+Even warnings and unresolved items must remain monochromatic.
+
+Use visual hierarchy through:
+• light vs dark tones
+• line thickness
+• borders
+• dashed borders
+• solid vs outlined icons
+• opacity
+• typography
+• spacing
+• shapes
+• evidence tags
+
+For unresolved / verification-required items, use:
+• darker outline
+• dashed border
+• warning icon
+• "VERIFY" label
+• subtle hatch pattern
+
+Do NOT introduce a red/yellow/orange warning colour.
+
+The deck should remain visually sophisticated even when printed in grayscale.
+
+============================================================
+3. NO AI IMAGES / NO PHOTOGRAPHS
+============================================================
+
+DO NOT USE:
+• AI-generated images
+• photographs
+• stock photography
+• decorative photographs
+• 3D renders
+• realistic people
+• generic business people
+• handshake imagery
+• cartoon characters
+• emojis
+• decorative illustrations
+
+Use ONLY clean vector-style infographic elements:
+• EV icon
+• bank / lender icon
+• rupee icon
+• supplier / factory icon
+• document icon
+• evidence document
+• magnifying glass
+• warning triangle
+• office / building icon
+• related-party network icon
+• profit / chart icon
+• verification / shield icon
+• transaction arrows
+• accounting symbols
+• ledger lines
+• brackets
+• connectors
+• editable-looking PowerPoint shapes
+
+Icons must belong to ONE consistent visual family.
+
+Do not mix outline icons with random filled icons.
+
+============================================================
+4. 16:9 + POWERPOINT RESOLUTION
+============================================================
+
+All slides:
+16:9 widescreen.
+
+Design as if the slide will be displayed on a large presentation screen.
+
+Use approximately 75–90% of the usable slide area.
+
+Do not create excessive empty whitespace.
+
+Do not overcrowd the slide either.
+
+The visual hierarchy should be obvious from presentation distance.
+
+============================================================
+5. ABSOLUTE TYPOGRAPHY RULE
+============================================================
+
+ABSOLUTE MINIMUM FONT SIZE = 11 PT.
+
+No text may be smaller than 11 pt.
+
+This includes:
+• source references
+• footnotes
+• labels
+• annotations
+• table cells
+• evidence tags
+• calculation notes
+• caveats
+• legends
+
+If content cannot fit at 11 pt:
+DO NOT SHRINK THE FONT.
+
+Instead:
+• simplify the wording
+• remove redundant wording
+• restructure the visual
+• redistribute the information
+• convert prose into a clearer visual relationship
+
+Preferred sizes:
+Slide titles: 28–32 pt
+Section headers: 18–22 pt
+Body text: 13–16 pt
+Key numbers: 34–48 pt
+
+============================================================
+6. SIMPLE ENGLISH — CRITICAL
+============================================================
+
+Every slide must be understandable WITHOUT the presenter speaking.
+
+Do not assume the judge remembers the case details.
+
+Every major number or visual relationship must have a short plain-English explanation answering:
+"SO WHAT DOES THIS NUMBER MEAN?"
+
+Use simple MBA-level English.
+
+Prefer:
+"Supplier records support 4,704 deliveries."
+NOT:
+"Supplier-level delivery reconciliation indicates evidentiary support for 4,704 units."
+
+Prefer:
+"The remaining 1,696 vehicles need independent verification."
+NOT:
+"The residual population remains subject to verification."
+
+Prefer:
+"The ₹168 cr advance is within the solar purpose, but delivery is not yet evidenced."
+NOT:
+"Counterparty conversion risk remains elevated."
+
+Use short sentences.
+
+Most explanatory sentences should be approximately 8–18 words.
+
+Technical terminology may be used when necessary, but explain it in plain English immediately.
+
+Do NOT fill slides with paragraphs.
+
+Each slide should contain:
+• one clear takeaway
+• key numbers
+• evidence
+• short explanation
+• important caveat
+• conclusion
+
+The deck should be understandable to a judge who sees the PDF without narration.
+
+============================================================
+7. ONE DOMINANT VISUAL PER SLIDE
+============================================================
+
+Every slide must have ONE dominant visual composition.
+
+Do NOT build the slide as a grid of equal-sized cards.
+
+Avoid dashboard-style layouts.
+
+Cards may be used only when they support the main visual.
+
+Prefer:
+• evidence chains
+• transaction flows
+• waterfalls
+• accounting bridges
+• progressive reveals
+• large-number comparisons
+• annotated calculations
+• ledger trails
+• connected evidence nodes
+• timelines
+• reconciliation diagrams
+
+The main visual should communicate the core argument before the audience reads every word.
+
+============================================================
+8. STORYTELLING STRUCTURE FOR EVERY SLIDE
+============================================================
+
+Every slide must follow this underlying narrative:
+
+QUESTION
+→
+EVIDENCE
+→
+WHAT IT MEANS
+→
+CAVEAT / MANAGEMENT DEFENCE
+→
+CONCLUSION
+→
+NEXT QUESTION
+
+Do NOT literally write all six labels on every slide unless visually appropriate.
+
+This is the storytelling logic behind the composition.
+
+============================================================
+9. CONTINUITY DEVICE
+============================================================
+
+Use one recurring forensic transaction trail across the deck.
+
+A thin visual line / transaction path should progressively evolve:
+
+₹1,033 cr
+→
+EV ASSET EVIDENCE
+→
+WELLRAY
+→
+COMPLETE MONEY TRAIL
+→
+EARNINGS
+→
+CREDIT DECISION
+
+Keep consistent:
+• arrow style
+• line weight
+• icon style
+• corner radius
+• evidence tags
+• typography
+• spacing
+• footer treatment
+
+The investigation should visually deepen from slide to slide.
+
+============================================================
+10. EVIDENCE DISCIPLINE
+============================================================
+
+USE ONLY THE SUPPLIED GREENDRIVE DATA PACK.
+
+Do NOT introduce external company information.
+
+Do NOT invent facts.
+
+Do NOT silently change case numbers.
+
+Do NOT convert an inference into a fact.
+
+Clearly distinguish:
+
+FACT
+Established directly by the supplied data.
+
+INFERENCE
+A reasonable interpretation derived from the evidence.
+
+UNVERIFIED
+Something requiring documentary, physical or independent confirmation.
+
+NEVER describe something as:
+• fraud
+• stolen
+• fake
+• nonexistent
+• shell company
+unless the supplied case source explicitly establishes it.
+
+Specifically:
+DO NOT say:
+"1,696 EVs do not exist."
+Say:
+"1,696 EVs require verification."
+
+DO NOT say:
+"Wellray is a shell company."
+Say:
+"Wellray presents a counterparty / delivery-verification concern."
+
+DO NOT say:
+"₹181 cr was fraudulently diverted."
+Say:
+"₹181 cr represents a fact-grade end-use breach outside the stated financing purposes."
+
+DO NOT say:
+"₹40 cr SwiftRide income was fabricated."
+Say:
+"The ₹40 cr related-party fee creates an earnings-quality / verification concern."
+
+============================================================
+
+============================================================
+SLIDE 6 — DECISION
+============================================================
+
+TITLE:
+"THE EVIDENCE CONVERGES — REFER FOR INDEPENDENT FORENSIC INVESTIGATION"
+
+SUBTITLE:
+"The evidence is sufficient to escalate the case, but not to declare fraud as a proven fact."
+
+Create four independent evidence streams converging toward:
+
+INDEPENDENT FORENSIC INVESTIGATION
+
+STREAM 1:
+₹181 cr
+FACT-GRADE END-USE BREACH
+"17.5% of facility"
+
+STREAM 2:
+₹168 cr
+WELLRAY
+"Counterparty / delivery verification"
+
+STREAM 3:
+1,696 EVs
+"Asset composition verification"
+
+STREAM 4:
+₹40 cr
+SWIFTRIDE RELATED-PARTY FEE
+"Earnings-quality verification"
+
+IMPORTANT:
+Do NOT imply that these four amounts can be added together.
+They are separate findings.
+
+Recommendation:
+REFER FOR INDEPENDENT FORENSIC INVESTIGATION
+
+"The recommendation is to investigate whether the converging evidence indicates misconduct or fraud."
+"Do not present fraud as already proven."
+
+Immediate actions:
+1. FREEZE FURTHER DISBURSEMENT
+2. PRESERVE RECOVERY OPTIONS
+3. VERIFY EV FLEET — VIN / CHASSIS LEVEL
+4. VERIFY WELLRAY — SOLAR DELIVERY + SUPPORTING DOCUMENTS
+5. REVIEW SWIFTRIDE — RELATED-PARTY TRANSACTIONS + FEE SUPPORT
+
+Control:
+SUPPLIER INVOICE
+↓
+INDEPENDENT DELIVERY CONFIRMATION
+↓
+VIN / CHASSIS VERIFICATION
+↓
+ASSET REGISTER MATCH
+↓
+NEXT LENDER TRANCHE
+
+"MILESTONE-BASED DISBURSEMENT + INDEPENDENT ASSET VERIFICATION"
+
+"Release future funding only after the financed asset is independently verified."
+
+Final:
+"VERIFY THE ASSET."
+"VERIFY THE COUNTERPARTY."
+"VERIFY THE CASH."
+"BEFORE THE NEXT RUPEE MOVES."
+
+NOW CREATE ONLY THIS ONE SLIDE, following every rule in the master prompt above.
