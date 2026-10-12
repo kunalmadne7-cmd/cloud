@@ -1,0 +1,125 @@
+# M&A Mock Case Interview – Strategy Sprint #4 (IIM Lucknow): transcript
+
+_Auto-transcribed offline with Whisper (small.en) from the uploaded video; may contain minor errors._
+
+- [00:05] the fourth episode of strategy sprint by consulting and strategy club of I am Dachno.
+- [00:10] Today we are going to do a deep dive in mergers and acquisition case with Aniket.
+- [00:14] So Aniket just let us know when you are ready to take home the case. We are ready also. Cool.
+- [00:19] So, your client is an international alcoholic beverage manufacturer.
+- [00:23] and they are looking to acquire a local beer company based in India.
+- [00:29] They want to do a due diligence and understand whether this is a good fit for the company or not.
+- [00:34] they
+- [00:35] So, just to be clear on the case statement, our client is an international and alcohol manufacturer.
+- [00:41] who are looking to acquire a local beer manufactured in India.
+- [00:44] and we have to value for the good investment opportunity. Yes, that is correct. So can I take a minute to come up with a few clarifying questions? Sure.
+- [01:04] So I have a few questions on the ASIC at hand, which is the local beer manufacturer. Can I know what segments does it operate in when you say beer? Is it just put standard beer that we can call other different types of beers such as?
+- [01:17] wheat beer or lager beer
+- [01:19] You can say that the target company manufacturers are like standard legged kind of beer, which is sort of catering to the mass market and is priced at a lower end. So it's competitively cheap as compared to other offerings of beers. Right. And by local, does that mean it operates in some specific state in India or city in India? Yes, that is correct. So the target primarily
+- [01:44] operates in Western India.
+- [01:46] Do we specify their operation is concentrated towards goal?
+- [01:51] alright
+- [01:53] Thank you. And do we have any information about the financials of the company as well as to their maybe revenue or market share.
+- [02:00] with respect to financial you could say that the company is competitively healthy
+- [02:06] and enjoys decent amounts of profit margins with respect to the competitors. Bye.
+- [02:12] So, since you mentioned competitors also.
+- [02:15] In my understanding, Goa has a lot of competitors, both regional and also maybe...
+- [02:21] international competitors like the bigger brands. Is that correct or is there a different scenario? Yes, your understanding is correct. You can proceed with that for the context of this.
+- [02:32] Thank you. And since you mentioned that we are priced at a lower segment.
+- [02:36] I would assume that our customers are also like the mass market.
+- [02:40] and would capture probably three kinds of customers, the occasional drinkers, the regular drinkers, and also the social drinkers since lower priced beers are available everywhere and people can drink across in concept.
+- [02:52] Yeah, that is a fair understanding. You can proceed with that.
+- [02:55] Sure, thank you. Can I take a minute before I proceed with structuring the case? Sure.
+- [03:27] Actually, before I deep dive into the case of so I think there are a few questions that I missed with regards to the acquirer of the acquirer in this case. What is the global presence of the larger family mentioned they have global presence? Where are they located? And where do they operate? So the acquirer is located in Europe. And they are primarily operating globally for various countries. They also have a presence in India as well.
+- [03:52] only
+- [03:52] And is there any specific objective that they have in terms of market expansion or increasing profits? They primarily want to expand their market in India.
+- [04:02] Currently as it stands, they are manufacturing just risky right now. And they want to expand their code of portfolio, especially with respect to India. So based on that understanding, they are going ahead with this acquisition.
+- [04:15] Okay, sounds fair. And last question, is there any specific thing that the acquirer brings to the table in terms of
+- [04:22] huge capital or market brand awareness or something else. Given that the acquirers are competitively larger company, they have better brand equity as compared to the target and obviously they have a lot of capital with them to help target company as well.
+- [04:39] Got it. So, I would like 30 seconds you have to structure my approach for sure.
+- [05:00] So, I would broadly look at three things here. Firstly, I would look at the financial performance, which is the financial performance of the target company, the local BL manufacturer, where I would look at the revenue structure and the cost structure.
+- [05:13] Secondly, I would look at the operational feasibility of this acquisition where I would look at various aspects such as the targets or the target segments that the company is currently dwelling with the channels that they are using to go to market and the production capacity that they have.
+- [05:29] And lastly, I would look at some synergies as well, since both appear to operate in the same market, which is alcohol, there will be various synergies involved in this transaction. And lastly, I could also look at some legal risks involved with the transaction instead of a fair approach. Yeah, this sounds like a fair approach. Let's go ahead with it.
+- [05:46] All right, kinetic 10 seconds before I structure the approach to the financial feasibility of aspects.
+- [06:00] No, thanks.
+- [06:02] Within the financial performance, I would look at the revenue structure of the new company. What has their revenue been since the last few years? Is it increasing? And is their market share also increasing as a consequence? To figure out if they are a viable product in the market and it's been-- [AUDIO OUT]
+- [06:17] successful in the west area that they operate in.
+- [06:21] Secondly, I would look at the cost structure as well to see what is their cost performance and look at the cost that they are bearing on various aspects such as raw materials, procurement and also the sales cost since sales cost appears to be very high in this new industry.
+- [06:36] And lastly, I would also look at aspects of IRR and IRR.
+- [06:40] to see if it matches with the objective that the company has in mind.
+- [06:44] Is that fair? Yeah, that sounds fair.
+- [06:46] All right
+- [06:47] Can I take 10 seconds to build my approach to the operational aspect of the zone?
+- [07:06] Right, so in the operational feasibility, I would look at four things. Firstly, I would look at the target audience or the customers of the asset in mind and see what who are they and why are they buying from a company.
+- [07:20] to say who they are. You mentioned that we are a mass market brand and can cater to various market segments because we are priced at a lower segment.
+- [07:29] So this, as I mentioned before, that it can cater to all kinds of drinkers. It might not be very feasible for maybe drinkers who are occasional, since they would prefer to go for higher price beers or more premium beers. But in India, we know that most people do tend to spend on the lower side, especially when it comes to alcohol. So it seems like a more attractive aspect in that sense.
+- [07:51] I would also look at why they are buying from us.
+- [07:54] target company. So what are the USBs of the target company? Is it taste? Is it quality? Or is it simply packaging because Goa as you mentioned is
+- [08:04] known for a lot of tourists and tourists might pick up things more based on packaging and less on taste.
+- [08:09] So I would look at what the USB of a time it
+- [08:12] Under channel I would look at what is the channel strategy. So in my understanding alcohol can be sold either through retail shops or thekas as we call them.
+- [08:21] or they can be sold through bars and pubs.
+- [08:23] and some other restaurants.
+- [08:26] Since it's a mass market product, I would assume that they are not as present in higher in bars that are
+- [08:32] more expensive or in higher, like in more premium restaurants.
+- [08:37] They would be more frequently present in retail stores and tikas which also offer a lot of other cheaper alcohols.
+- [08:44] Under the production, we look at what is the production capacity and is there any unutilized capacities that we can optimize or maximize the production revenues.
+- [08:52] and make their production process more robust.
+- [08:57] And I would also look at the workforce where I would look at firstly the leadership. So what is the experience with the alcohol market?
+- [09:04] and how
+- [09:05] efficient or how experienced the leadership is in this industry.
+- [09:09] I would look at their sales teams also because in my understanding a lot of selling is especially the B2B sales in the alcohol industry is come through the sales team. So how efficient their sales team is.
+- [09:19] And then I would also look at the general workforce of the company because if they, so what is their sentiment towards the company, whether they are happy because if the workforce is not happy in a company, then probably there is something wrong with their management also.
+- [09:33] of
+- [09:34] You can let me know if I missed something or I have to proceed. No, I think this seems fine to us. You can proceed with the other aspects as well.
+- [09:42] All right, so the last thing that I wanted to talk about was synergies. Can I take a few seconds to build?
+- [10:13] So, there are three sorts of synergies that I can think of.
+- [10:17] Firstly, in terms of offering rights, so the current company has a whiskey offering and the target has a beer offering.
+- [10:23] I think when they can club the two, they can negotiate much better deals with their channels or with their partners.
+- [10:30] or any other stakeholders involved in the business.
+- [10:32] And also the brand awareness would be way better for a company that has two types of.
+- [10:37] spirits compared to one
+- [10:39] Secondly, also there's the synergy of knowledge. So the local company here, the beer company would have a lot of knowledge with regards to the demand that is there in Goa, the seasonal fluctuations and there are other aspects of the market which the global company might not be aware of.
+- [10:54] So we would have access to those and get to tap into a much larger market which is Guo.
+- [10:59] and we can also take the local player there from the west
+- [11:02] and expand it to the other parts of the country.
+- [11:05] I also think there would be knowledge in terms of compliance. So in my understanding, state laws are very different than India. For alcohol, it differs from every state to state.
+- [11:13] So I think
+- [11:15] the target would have
+- [11:17] localised knowledge of Goa and help us penetrate deeper into that market as well.
+- [11:22] And lastly,
+- [11:24] under similarity, I would also put the aspect of risk.
+- [11:27] or risk diversification since we know that there are times of the year where beer is more popular as compared to times of the year where
+- [11:35] Whiskey is more popular depending on the weather or depending on the event
+- [11:40] [AUD
+- [11:40] Also, there might be a lot of concerts, a lot of events in Google that will be happening.
+- [11:45] and only people tend to go for one spirit over the other and if we have presence across all it sort of decreases our risk
+- [11:53] in terms of diversification.
+- [11:56] Is there anything else that I should look at?
+- [12:00] No, I think this should be sufficient for us. We can close the case for now.
+- [12:05] Thank you so
+- [12:09] The interview did manage to cover a lot of ground in their first round of questioning with regards to the company, the product, the customers and the competitors.
+- [12:17] of the acid
+- [12:18] However, they could have proved a little bit more into the products of the company.
+- [12:22] whether they are selling in glass bottles or in cans because this difference in offering can affect a lot of things going forward.
+- [12:29] And also they could have covered the aspects of B2B versus B2C, whether the company is only selling B2C or also has B2B channels. They went ahead with the assumption of B2C, which was fine.
+- [12:39] Manthi should have clarified
+- [12:41] Furthermore, their vision of the case into financial aspects, operational performance and synergies and risks was nice. However, under the financial bucket, they could have covered a lot of additional things as well, such as the capital table, the interest payments, profitability, or the NPV expected from the project.
+- [12:58] There are certain stakeholders that were missed under the operational aspect, such as the distributors.
+- [13:03] with whom people have credit cycles and two companies, one BR and one whiskey company might have very different credit cycles, especially that one is a local one and one is an MNC and difference in credit cycles can affect businesses. So that is not a synergy that can be expected. Even for warehousing, a warehousing for a beer company would be very different from that of a whiskey company.
+- [13:23] So these synergies are not to be expected under the operational aspect.
+- [13:28] Furthermore
+- [13:29] The restaurants do have fixed menus and they just cannot change the menus overnight.
+- [13:34] So when they spoke about how the offerings can be increased after the acquisition, while it might be true for the retail stores that the candidate spoke about, it is not true for the bars or the restaurants that also form a part of the distribution.
+- [13:49] All of this was part of.
+- [13:52] are part of things that you look at during acquisition or a diligence phase.
+- [13:56] There are certain things that you look pre-acquisition as well, which is why do you want to do the acquisition in the first place.
+- [14:02] while the hat clarified the objective of
+- [14:05] this acquisition. We don't know whether
+- [14:07] Why this company went with this specific asset only? Why did they not choose to let's say penetrate into East India first?
+- [14:14] or south or north India first and if they wanted to go to West India or Boa, why did they not go with some other company like why this specific company? We still don't know it.
+- [14:24] Even post acquisition were not the plans of the company.
+- [14:27] Do they want to absorb the beer company under their own name? Do they want to operate it as a separate entity? Like we still don't know.
+- [14:35] So while most of the case focused on word kind can be the things.
+- [14:38] we can see during the acquisition that from part of financial or commercial do deluges.
+- [14:44] A lot of things that logically can be looked at before or after the acquisition were missed.
+- [14:50] So that could have been spoken or even more.

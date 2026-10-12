@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M&amp;A Beer Case Notes</title>
+<style>
+@font-face { font-family: "PH"; src: url("fonts/patrick-hand-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "AD"; src: url("fonts/architects-daughter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "GH"; src: url("fonts/gochi-hand-latin-400-normal.woff2") format("woff2"); }
+:root { --ink: #161616; --soft: #4a4a4a; --paper: #fbfbf8; --rule: #e4e4e0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #cfcfca; }
+body { font-family: "PH", "AD", cursive; color: var(--ink); font-size: 18.5px; line-height: 1.34; }
+.page {
+  width: 800px; height: 1200px; margin: 24px auto; position: relative; overflow: hidden;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(180deg, transparent 0, transparent 25px, var(--rule) 25px, var(--rule) 26px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  padding: 16px 22px 14px 40px;
+  display: flex; flex-direction: column; gap: 11px; justify-content: space-between;
+}
+.page::before { content: ""; position: absolute; left: 7px; top: 70px; width: 14px; height: 1100px;
+  background: radial-gradient(circle at 7px 7px, #e9e9e5 5px, #bdbdb8 5.5px, #bdbdb8 6.5px, transparent 7px) 0 0 / 14px 240px repeat-y; }
+
+/* rough hand-drawn borders */
+.r { position: relative; }
+.r::after { content: ""; position: absolute; inset: 0; border: 2px solid var(--ink); border-radius: 7px; filter: url(#rough); pointer-events: none; }
+.r.d::after { border-style: dashed; border-width: 1.6px; }
+.r.thick::after { border-width: 3px; border-radius: 4px; }
+.r.cloud::after { border-radius: 38px 46px 40px 50px / 44px 36px 48px 40px; }
+.r.round::after { border-radius: 16px; }
+
+.top { display: flex; gap: 14px; align-items: center; }
+.top .pg, .top .hd { font-family: "AD"; font-size: 14px; padding: 2px 10px; letter-spacing: .5px; }
+.top .hd { margin: 0 auto; transform: translateX(-40px); }
+.title { align-self: center; font-family: "GH"; font-size: 38px; line-height: 1.1; padding: 6px 22px 4px; text-align: center; }
+.sec { font-family: "GH"; font-size: 23px; padding: 1px 12px; align-self: flex-start; line-height: 1.3; }
+.box { padding: 9px 13px; }
+.box.cloud { padding: 12px 26px 16px 26px; }
+ol.box { padding-left: 38px; }
+.row { display: flex; gap: 10px; align-items: stretch; }
+.row > * { flex: 1; }
+.c2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.c3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.c4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+.c5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+h4 { font-family: "GH"; font-size: 20px; margin: 0 0 3px; font-weight: 400; line-height: 1.2; }
+.big { font-family: "GH"; font-size: 26px; line-height: 1.1; }
+.huge { font-family: "GH"; font-size: 34px; line-height: 1; }
+ul { margin: 0; padding-left: 18px; }
+li { margin: 1px 0; }
+ol { margin: 0; padding-left: 20px; }
+p { margin: 0; }
+.sm { font-size: 17px; line-height: 1.3; }
+.xs { font-size: 15px; line-height: 1.25; }
+.ctr { text-align: center; }
+.u { text-decoration: underline; text-underline-offset: 3px; }
+.strike { text-decoration: line-through; text-decoration-thickness: 2px; }
+.hl { background: repeating-linear-gradient(-45deg, transparent 0 3px, rgba(0,0,0,.13) 3px 4px); padding: 0 3px; }
+.ic { width: 52px; height: 52px; flex: none; fill: none; stroke: #161616; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.ic.s { width: 38px; height: 38px; }
+.ic.l { width: 74px; height: 74px; }
+.flex { display: flex; gap: 10px; align-items: center; }
+.vflex { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.arrow { font-family: "GH"; font-size: 26px; flex: none !important; align-self: center; }
+.lbl { font-family: "GH"; font-size: 17px; }
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1.5px solid var(--ink); padding: 3px 7px; vertical-align: top; text-align: left; }
+th { font-family: "GH"; font-weight: 400; font-size: 18px; background: repeating-linear-gradient(-45deg, transparent 0 4px, rgba(0,0,0,.07) 4px 5px); }
+td.n { text-align: center; font-family: "GH"; font-size: 18px; }
+.src { align-self: flex-end; font-size: 14px; padding: 3px 10px; }
+.tag { font-family: "GH"; display: inline-block; border: 2px solid var(--ink); border-radius: 4px; padding: 0 6px; font-size: 17px; line-height: 1.25; }
+.tag.inv { background: var(--ink); color: var(--paper); }
+.stars { letter-spacing: 1px; }
+svg text { font-family: "PH", cursive; }
+@media print { html, body { background: none; } .page { margin: 0; box-shadow: none; page-break-after: always; } }
+</style>
+</head>
+<body>
+
+<!-- shared defs: rough filter + line icons -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+    <pattern id="hatch1" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#161616" stroke-width="1.6"/></pattern>
+    <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#161616"/></pattern>
+  </defs>
+  <g fill="none" stroke="#161616" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-building" viewBox="0 0 48 48"><rect x="12" y="5" width="24" height="39"/><path d="M17 11h4M27 11h4M17 18h4M27 18h4M17 25h4M27 25h4M17 32h4M27 32h4M21 44v-6h6v6M6 44h36"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 48 48"><path d="M4 44V24l10-6v6l10-6v6l10-6v26zM34 44V8h7v36M4 44h40M10 31h4M18 31h4M26 31h4M10 37h4M18 37h4M26 37h4"/></symbol>
+    <symbol id="i-warehouse" viewBox="0 0 48 48"><path d="M4 20 24 7l20 13v24H4zM14 44V28h20v16M14 33h20M14 38h20"/></symbol>
+    <symbol id="i-box" viewBox="0 0 48 48"><path d="M8 15 24 7l16 8v19l-16 8-16-8zM8 15l16 8 16-8M24 23v19M16 11l16 8"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 48 48"><path d="M3 13h25v21H3zM28 19h9l7 8v7H28"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></symbol>
+    <symbol id="i-store" viewBox="0 0 48 48"><path d="M6 18 10 7h28l4 11zM6 18c0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0M9 22v22h30V22M20 44V32h8v12"/></symbol>
+    <symbol id="i-cookie" viewBox="0 0 48 48"><path d="M24 6a18 18 0 1 0 18 18 6 6 0 0 1-7-6 6 6 0 0 1-6-7 5 5 0 0 1-5-5z"/><circle cx="17" cy="20" r="2" fill="#161616"/><circle cx="26" cy="30" r="2" fill="#161616"/><circle cx="16" cy="32" r="1.6" fill="#161616"/><circle cx="32" cy="24" r="1.6" fill="#161616"/></symbol>
+    <symbol id="i-up" viewBox="0 0 48 48"><path d="M5 5v38h38M10 36l9-10 7 6 13-16M32 15h7v7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 48 48"><path d="M5 5v38h38M10 14l9 9 7-5 13 15M39 26v7h-7"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 48 48"><path d="M17 30c-4-3-6-7-6-11a13 13 0 0 1 26 0c0 4-2 8-6 11v5H17zM18 40h12M20 44h8M24 1v2M8 6l2 2M40 6l-2 2"/></symbol>
+    <symbol id="i-people" viewBox="0 0 48 48"><circle cx="24" cy="14" r="5"/><circle cx="11" cy="18" r="4"/><circle cx="37" cy="18" r="4"/><path d="M15 38c0-8 4-13 9-13s9 5 9 13zM3 38c0-6 3-11 8-11 2 0 3 .5 4 1M45 38c0-6-3-11-8-11-2 0-3 .5-4 1"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 48 48"><path d="M20 30V9a4 4 0 0 1 8 0v21a8 8 0 1 1-8 0zM24 16v18M31 12h5M31 18h4M31 24h5"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 48 48"><path d="M8 12h32M19 12V7h10v5M12 12l2 31h20l2-31M20 19v18M28 19v18"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 48 48"><ellipse cx="22" cy="10" rx="13" ry="5"/><path d="M9 10v8c0 3 6 5 13 5s13-2 13-5v-8M9 18v8c0 3 6 5 13 5M9 26v8c0 3 6 5 13 5"/><circle cx="34" cy="33" r="10"/><path d="M34 27v12M31 30h5a2 2 0 0 1 0 4h-4a2 2 0 0 0 0 4h5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 48 48"><circle cx="20" cy="20" r="13"/><path d="M30 30l13 13M14 20a6 6 0 0 1 6-6"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 48 48"><path d="M24 5 44 41H4zM24 18v11M24 35v1"/></symbol>
+    <symbol id="i-target" viewBox="0 0 48 48"><circle cx="22" cy="26" r="17"/><circle cx="22" cy="26" r="10"/><circle cx="22" cy="26" r="3"/><path d="M22 26 42 6M36 6h6v6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="4"/><path d="M14 25l7 7 13-15"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l8 5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 48 48"><path d="M6 8h30v20H18l-8 7v-7H6zM40 16h4v18h-4v6l-6-6H22"/></symbol>
+    <symbol id="i-tie" viewBox="0 0 48 48"><circle cx="24" cy="11" r="7"/><path d="M8 46c0-12 7-20 16-20s16 8 16 20M21 26l3 4 3-4M24 30l-3 10 3 4 3-4z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 48 48"><rect x="8" y="5" width="32" height="39" rx="3"/><path d="M15 15h3M22 15h12M15 24h3M22 24h12M15 33h3M22 33h12"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="34" rx="3"/><path d="M5 18h38M14 5v8M34 5v8M12 26h4M22 26h4M32 26h4M12 34h4M22 34h4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 48 48"><circle cx="24" cy="24" r="19"/><path d="M5 24h38M24 5c-6 6-8 12-8 19s2 13 8 19M24 5c6 6 8 12 8 19s-2 13-8 19M9 13h30M9 35h30"/></symbol>
+    <symbol id="i-beer" viewBox="0 0 48 48"><path d="M10 14h22v28H10zM32 19h5a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-5M15 20v16M21 20v16M27 20v16M9 14c0-4 3-6 6-5 1-3 5-4 7-2 2-2 6-1 7 2 3 0 5 2 4 5"/></symbol>
+    <symbol id="i-bottle" viewBox="0 0 48 48"><path d="M20 4h8v8l4 6v24a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V18l4-6zM16 24h16v12H16z"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 48 48"><path d="M3 18l8-6 7 3 6-3 7 2 7-3 7 6M3 18v12l5 2M45 18v12l-6 3M8 32l9 7c2 1 3 0 3-1l2 2c2 1 3 0 3-1l2 1c2 1 3-1 2-2l2 1c2 0 3-2 1-3L24 22l-5 4c-2 1-4 0-4-2"/></symbol>
+  </g>
+</svg>
+
+<!-- ====================== PAGE 1 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 1 of 7</span><span class="hd r">CASE NOTES: M&amp;A Mock Case (Beer Acquisition)</span></div>
+  <div class="title r thick">M&amp;A Case: Problem Hai Kya?</div>
+
+  <span class="sec r">Simple Bhasha Mein:</span>
+  <div class="row">
+    <div class="box r" style="flex:1.45">
+      <p>Ek <b>badi international daaru company</b> (Europe se, abhi sirf <b>whisky</b> banati hai) India ki ek <b>chhoti local beer company</b> ko <b class="u">khareedna (acquire)</b> chahti hai.</p>
+      <p style="margin-top:4px">Humein <b>due diligence</b> karni hai: <span class="hl">kya ye deal sahi hai? Kya target company client ke liye "good fit" hai?</span></p>
+    </div>
+    <div class="flex" style="flex:1; justify-content:center; gap:6px">
+      <div class="vflex ctr"><svg class="ic l"><use href="#i-globe"/></svg><span class="lbl">Acquirer</span><span class="xs">Europe, whisky</span></div>
+      <div class="vflex"><span class="xs">khareedna</span><span class="arrow">→</span></div>
+      <div class="vflex ctr"><svg class="ic l"><use href="#i-beer"/></svg><span class="lbl">Target</span><span class="xs">Goa, beer</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box r d" style="flex:1.2">
+      <h4>Case Prompt (original):</h4>
+      <p class="sm"><i>"Your client is an international manufacturer of alcoholic beverages, and they're considering acquiring a local beer manufacturer in India. Evaluate the opportunity."</i></p>
+    </div>
+    <div class="box r cloud" style="flex:1">
+      <h4>Example:</h4>
+      <p class="sm">Jaise ek badi chocolate brand ek <b>local namkeen</b> company khareede: naya product bhi milega, aur local market ki samajh bhi. Par pehle check karo: <b>paisa vasool hai ya nahi?</b></p>
+    </div>
+  </div>
+
+  <span class="sec r">1. M&amp;A Ki Basic Bhasha</span>
+  <div class="c3">
+    <div class="box r ctr"><div class="flex" style="justify-content:center"><svg class="ic s"><use href="#i-handshake"/></svg><h4>Acquisition</h4></div><p class="sm">Ek company doosri ko <b>khareed</b> leti hai (control le leti hai).</p></div>
+    <div class="box r ctr"><div class="flex" style="justify-content:center"><svg class="ic s"><use href="#i-search"/></svg><h4>Due Diligence</h4></div><p class="sm">Khareedne se pehle <b>poori jaanch</b>: financials, operations, risks.</p></div>
+    <div class="box r ctr"><div class="flex" style="justify-content:center"><svg class="ic s"><use href="#i-people"/></svg><h4>Synergy</h4></div><p class="sm">Saath aane se <b>1 + 1 = 3</b>: jo fayda akele nahi milta.</p></div>
+  </div>
+  <div class="row">
+    <div class="box r d sm">Is case mein: <b>Acquirer</b> = client (khareedne wala). <b>Target / Asset</b> = local beer company (jise khareedna hai).</div>
+  </div>
+
+  <span class="sec r">2. Interview Ka Flow (Ek Nazar Mein)</span>
+  <div class="flex sm" style="flex-wrap:wrap; gap:5px 4px">
+    <span class="tag">Recap</span>→<span class="tag">Target ke Qs</span>→<span class="tag">Acquirer ke Qs</span>→<span class="tag inv">30 sec: Structure</span>→<span class="tag">Financial</span>→<span class="tag">Operational</span>→<span class="tag">Synergies</span>→<span class="tag">Risks</span>→<span class="tag inv">Feedback</span>
+  </div>
+  <div class="box r d sm"><b>Style dekho:</b> candidate ne har bucket se pehle <b>10 sec</b> maange ("Can I take 10 seconds to build my approach?"), phir us bucket ko detail mein khola = <b>bucket-by-bucket deep dive</b>.</div>
+
+  <div class="src r">Source: "M&amp;A Mock Case Interview | The Strategy Sprint #4", Consulting &amp; Strategy Club, IIM Lucknow (Afzal Rao: Administrator · Aniket Dhanuka: Case Solver)</div>
+</section>
+
+<!-- ====================== PAGE 2 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 2 of 7</span><span class="hd r">CASE NOTES: M&amp;A Mock Case (Beer Acquisition)</span></div>
+  <div class="title r thick">Clarifying Questions: Case Facts</div>
+
+  <span class="sec r">1. Target (Local Beer Company) Ke Baare Mein</span>
+  <table class="sm">
+    <tr><th style="width:22%">Topic</th><th style="width:38%">Sawaal</th><th>Jawaab</th></tr>
+    <tr><td><b>Product</b></td><td>Kaunsi beer? Wheat, lager, etc.?</td><td><b>Standard light / lager beer</b>, mass market ke liye</td></tr>
+    <tr><td><b>Price</b></td><td>(Interviewer ne khud bataya)</td><td>Competitors se <b>sasti</b>: lower price segment</td></tr>
+    <tr><td><b>Geography</b></td><td>"Local" = kaunsa state / city?</td><td><b>Western India</b>, operations <b>Goa</b> mein concentrated</td></tr>
+    <tr><td><b>Financials</b></td><td>Revenue / market share pata hai?</td><td>Financially <b>healthy</b>, competitors se <b>decent profit margins</b></td></tr>
+    <tr><td><b>Competitors</b></td><td>Goa mein regional + bade international brands?</td><td>Haan, assumption sahi hai ✔</td></tr>
+    <tr><td><b>Customers</b></td><td>Mass market = kaun?</td><td><b>Occasional, regular aur social drinkers</b> ✔</td></tr>
+  </table>
+
+  <span class="sec r">2. Acquirer (Client) Ke Baare Mein</span>
+  <div class="row">
+    <table class="sm" style="flex:1.5">
+      <tr><th style="width:30%">Topic</th><th>Jawaab</th></tr>
+      <tr><td><b>Global presence</b></td><td>HQ <b>Europe</b>; kai countries mein, <b>India mein bhi</b> present</td></tr>
+      <tr><td><b>Product</b></td><td>Abhi sirf <b>whisky</b></td></tr>
+      <tr><td><b>Objective</b></td><td>India mein <b>product portfolio + presence expand</b> karna</td></tr>
+      <tr><td><b>Kya laata hai?</b></td><td>Better <b>brand equity</b> + bahut saara <b>capital</b></td></tr>
+    </table>
+    <div class="box r cloud" style="flex:1">
+      <h4>Note:</h4>
+      <p class="sm">Candidate ne pehle sirf target ke sawaal poochhe, structure se pehle <b>wapas aake</b> acquirer ke poochhe ("few questions I missed"). Theek hai, par M&amp;A mein <b>shuru se dono side</b> ke sawaal poochho.</p>
+    </div>
+  </div>
+
+  <span class="sec r">3. Yaad Rakhne Ka Checklist</span>
+  <div class="c2">
+    <div class="box r">
+      <h4>TARGET ke liye (slide pe "CPCC" type)</h4>
+      <ul class="sm"><li><b>C</b>ompany: financials, geography</li><li><b>P</b>roduct: kya bechte hain, price segment</li><li><b>C</b>ustomer: kaun khareedta hai</li><li><b>C</b>ompetitor: market mein aur kaun</li></ul>
+    </div>
+    <div class="box r">
+      <h4>ACQUIRER ke liye</h4>
+      <ul class="sm"><li>Kahan hai, kya bechta hai</li><li><b>Objective</b>: deal kyun? (growth, portfolio, market entry)</li><li>Kya laata hai: brand, capital, distribution</li></ul>
+    </div>
+  </div>
+  <div class="box r d sm"><b>⚠ Miss hue sawaal (feedback):</b> beer <b>glass bottle ya can</b> mein? Bikri <b>B2B ya B2C</b>? Candidate ne B2C assume kiya, theek tha, par <b>clarify</b> karna chahiye tha (page 6).</div>
+</section>
+
+<!-- ====================== PAGE 3 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 3 of 7</span><span class="hd r">CASE NOTES: M&amp;A Mock Case (Beer Acquisition)</span></div>
+  <div class="title r thick">Framework: Acquisition Ka Structure</div>
+
+  <span class="sec r">Case Framework (Interview ke end wali slide se)</span>
+<svg viewBox="0 0 730 460" width="730" height="460" style="align-self:center"><g fill="#161616"><rect x="290" y="4" width="150" height="40" rx="6" fill="none" stroke="#161616" stroke-width="3" filter="url(#rough)"/><text x="365" y="31" font-size="20" text-anchor="middle">ACQUISITION</text><path d="M365 44v16M135 60h537M135 60v14M365 60v14M535 60v14M672 60v14" fill="none" stroke="#161616" stroke-width="2" filter="url(#rough)"/><rect x="5" y="74" width="260" height="38" rx="6" fill="none" stroke="#161616" stroke-width="2.6" filter="url(#rough)"/><text x="135.0" y="99" font-size="17" text-anchor="middle">Financial Feasibility</text><rect x="285" y="74" width="160" height="38" rx="6" fill="none" stroke="#161616" stroke-width="2.6" filter="url(#rough)"/><text x="365.0" y="99" font-size="17" text-anchor="middle">Operational Feasibility</text><rect x="462" y="74" width="146" height="38" rx="6" fill="none" stroke="#161616" stroke-width="2.6" filter="url(#rough)"/><text x="535.0" y="99" font-size="17" text-anchor="middle">Synergies</text><rect x="622" y="74" width="104" height="38" rx="6" fill="none" stroke="#161616" stroke-width="2.6" filter="url(#rough)"/><text x="674.0" y="99" font-size="17" text-anchor="middle">Risks</text><path d="M135 112v14M45 126h180M45 126v12M135 126v12M225 126v12" fill="none" stroke="#161616" stroke-width="2" filter="url(#rough)"/><rect x="5" y="138" width="80" height="30" rx="4" fill="none" stroke="#161616" stroke-width="1.6" filter="url(#rough)"/><text x="45.0" y="158.2" font-size="15" text-anchor="middle">Revenue</text><rect x="95" y="138" width="80" height="30" rx="4" fill="none" stroke="#161616" stroke-width="1.6" filter="url(#rough)"/><text x="135.0" y="158.2" font-size="15" text-anchor="middle">Cost</text><rect x="185" y="138" width="80" height="30" rx="4" fill="none" stroke="#161616" stroke-width="1.6" filter="url(#rough)"/><text x="225.0" y="158.2" font-size="15" text-anchor="middle">Metrics</text><path d="M3 168V352M3 202h6M3 252h6M3 302h6M3 352h6" fill="none" stroke="#161616" stroke-width="1.8" filter="url(#rough)"/><rect x="9" y="182" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="48.0" y="199.4" font-size="13" text-anchor="middle">Current rev</text><text x="48.0" y="213.7" font-size="13" text-anchor="middle">+ SKU split</text><rect x="9" y="232" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="48.0" y="249.4" font-size="13" text-anchor="middle">Revenue</text><text x="48.0" y="263.7" font-size="13" text-anchor="middle">growth</text><rect x="9" y="282" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="48.0" y="299.4" font-size="13" text-anchor="middle">Current</text><text x="48.0" y="313.7" font-size="13" text-anchor="middle">mkt share</text><rect x="9" y="332" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="48.0" y="349.4" font-size="13" text-anchor="middle">Mkt share</text><text x="48.0" y="363.7" font-size="13" text-anchor="middle">growth</text><path d="M93 168V302M93 202h6M93 252h6M93 302h6" fill="none" stroke="#161616" stroke-width="1.8" filter="url(#rough)"/><rect x="99" y="182" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="138.0" y="206.6" font-size="13" text-anchor="middle">Procurement</text><rect x="99" y="232" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="138.0" y="256.6" font-size="13" text-anchor="middle">Production</text><rect x="99" y="282" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="138.0" y="306.6" font-size="13" text-anchor="middle">Sales</text><path d="M183 168V352M183 202h6M183 252h6M183 302h6M183 352h6" fill="none" stroke="#161616" stroke-width="1.8" filter="url(#rough)"/><rect x="189" y="182" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="228.0" y="206.6" font-size="13" text-anchor="middle">ROI</text><rect x="189" y="232" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="228.0" y="256.6" font-size="13" text-anchor="middle">IRR</text><rect x="189" y="282" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="228.0" y="306.6" font-size="13" text-anchor="middle">NPV</text><rect x="189" y="332" width="78" height="40" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="228.0" y="356.6" font-size="13" text-anchor="middle">Cap table</text><path d="M295 112V329M295 145h10M295 191h10M295 237h10M295 283h10M295 329h10" fill="none" stroke="#161616" stroke-width="1.8" filter="url(#rough)"/><rect x="305" y="128" width="145" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="377.5" y="149.9" font-size="14" text-anchor="middle">Target audience</text><rect x="305" y="174" width="145" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="377.5" y="195.9" font-size="14" text-anchor="middle">Value proposition</text><rect x="305" y="220" width="145" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="377.5" y="241.9" font-size="14" text-anchor="middle">Production</text><rect x="305" y="266" width="145" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="377.5" y="287.9" font-size="14" text-anchor="middle">Channel</text><rect x="305" y="312" width="145" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="377.5" y="333.9" font-size="14" text-anchor="middle">Talent</text><path d="M472 112V237M472 145h10M472 191h10M472 237h10" fill="none" stroke="#161616" stroke-width="1.8" filter="url(#rough)"/><rect x="482" y="128" width="134" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="549.0" y="149.9" font-size="14" text-anchor="middle">Product portfolio</text><rect x="482" y="174" width="134" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="549.0" y="195.9" font-size="14" text-anchor="middle">Knowledge</text><rect x="482" y="220" width="134" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="549.0" y="241.9" font-size="14" text-anchor="middle">Risk diversification</text><path d="M632 112V191M632 145h10M632 191h10" fill="none" stroke="#161616" stroke-width="1.8" filter="url(#rough)"/><rect x="642" y="128" width="80" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="682.0" y="149.9" font-size="14" text-anchor="middle">Licensing</text><rect x="642" y="174" width="80" height="34" rx="4" fill="none" stroke="#161616" stroke-width="1.6" stroke-dasharray="4 3" filter="url(#rough)"/><text x="682.0" y="195.9" font-size="14" text-anchor="middle">Dilution</text><g font-size="15.5"><text x="300" y="400">← Har bucket = ek sawaal:</text><text x="300" y="424">Financial: "Paisa banega?"  ·  Operational: "Chalega?"</text><text x="300" y="448">Synergies: "Saath mein fayda?"  ·  Risks: "Kya bigad sakta?"</text></g></g></svg>
+
+  <span class="sec r">Candidate Ne Kaise Present Kiya?</span>
+  <div class="flex sm" style="gap:4px; align-items:stretch">
+    <div class="box r ctr" style="flex:1"><svg class="ic s"><use href="#i-clock"/></svg><br><b>30 sec</b> lekar <b>3–4 buckets</b> ka overview diya</div><span class="arrow">→</span>
+    <div class="box r ctr" style="flex:1">Interviewer: "fair approach" ✔</div><span class="arrow">→</span>
+    <div class="box r ctr" style="flex:1">Har bucket se pehle <b>10 sec</b> → us bucket ka <b>sub-structure</b></div><span class="arrow">→</span>
+    <div class="box r ctr" style="flex:1">End mein: "Kuch miss kiya?" (check-in)</div>
+  </div>
+
+  <div class="row">
+    <div class="box r cloud">
+      <h4>Tip:</h4>
+      <p class="sm">Pehle <b>high-level buckets</b> bolo, approval lo, phir <b>ek-ek bucket</b> kholo. Isse interviewer ko lagta hai tum <b>organized</b> ho, aur beech mein woh direction bhi de sakta hai.</p>
+    </div>
+    <div class="box r d">
+      <h4>Risks bucket:</h4>
+      <p class="sm">Candidate ne "legal risks" sirf mention kiya, detail nahi. Slide pe: <b>Licensing</b> (alcohol ke state-wise license / laws) aur <b>Dilution</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 4 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 4 of 7</span><span class="hd r">CASE NOTES: M&amp;A Mock Case (Beer Acquisition)</span></div>
+  <div class="title r thick">Financial + Operational Feasibility</div>
+
+  <span class="sec r">1. Financial Feasibility: "Paisa Banega?"</span>
+  <div class="c3">
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-up"/></svg><h4>Revenue</h4></div>
+      <ul class="sm"><li>Pichle kuch saal ka revenue <b>badh raha</b> hai?</li><li><b>Market share</b> bhi badh raha?</li><li>→ West mein product <b>successful / viable</b> hai ya nahi</li></ul>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-coins"/></svg><h4>Cost Structure</h4></div>
+      <ul class="sm"><li>Raw materials / <b>procurement</b></li><li>Production</li><li><b>Sales cost</b>: alcohol industry mein bahut high hota hai</li></ul>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-target"/></svg><h4>Metrics</h4></div>
+      <ul class="sm"><li><b>IRR</b> (aur ROI / NPV)</li><li>Kya ye client ke <b>objective</b> se match karta hai?</li></ul>
+    </div>
+  </div>
+  <div class="box r d sm"><b>⚠ Feedback:</b> financial bucket mein aur add kar sakte the: <b>cap table</b>, <b>interest payments</b>, <b>profitability</b>, aur project ka expected <b>NPV</b>.</div>
+
+  <span class="sec r">2. Operational Feasibility: "Business Chalega?"</span>
+  <div class="c2">
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-people"/></svg><h4>① Target Audience (kaun khareedta?)</h4></div>
+      <p class="sm">Mass market, sasta → <b>sab tarah ke drinkers</b>. India mein log alcohol pe <b>kam kharch</b> karna pasand karte hain → attractive. Par occasional drinkers shayad <b>premium beer</b> lein.</p>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-bottle"/></svg><h4>② Value Proposition / USP (kyun khareedta?)</h4></div>
+      <p class="sm">Taste? Quality? Ya <b>packaging</b>? Goa = <b>tourists</b>, aur tourist aksar <b>packaging dekh ke</b> khareedte hain, taste se kam.</p>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-store"/></svg><h4>③ Channel (kahan bikta?)</h4></div>
+      <p class="sm"><b>Retail shops / thekas</b> vs <b>bars, pubs, restaurants</b>. Mass product → zyada <b>thekas</b> mein, premium bars mein kam.</p>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-factory"/></svg><h4>④ Production</h4></div>
+      <p class="sm">Production <b>capacity</b> kitni hai? Koi <b>unutilized capacity</b> hai jise use karke revenue badha sakein? Process robust hai?</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-tie"/></svg><h4>⑤ Talent / Workforce</h4></div>
+      <ul class="sm"><li><b>Leadership</b>: alcohol industry ka kitna experience?</li><li><b>Sales team</b>: B2B selling mostly sales team se hoti hai → kitni efficient?</li><li><b>General workforce</b>: khush hain? Naraz workforce = management mein problem ka signal.</li></ul>
+    </div>
+    <div class="box r cloud" style="flex:.75">
+      <h4>Example:</h4>
+      <p class="sm">Ghar khareedne se pehle dekhte ho: <b>EMI chalegi?</b> (financial) aur <b>rehne layak hai?</b> (operational). Dono check zaroori.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 5 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 5 of 7</span><span class="hd r">CASE NOTES: M&amp;A Mock Case (Beer Acquisition)</span></div>
+  <div class="title r thick">Synergies + Risks: 1 + 1 = 3?</div>
+
+  <span class="sec r">1. Teen Synergies (Candidate Ke)</span>
+  <div class="c3">
+    <div class="box r">
+      <div class="vflex"><svg class="ic"><use href="#i-bottle"/></svg><h4>① Product Portfolio</h4></div>
+      <ul class="sm"><li>Whisky (client) + Beer (target) = <b>2 products</b></li><li>Channels / partners se <b>better deals negotiate</b></li><li><b>Brand awareness</b> zyada</li></ul>
+    </div>
+    <div class="box r">
+      <div class="vflex"><svg class="ic"><use href="#i-bulb"/></svg><h4>② Knowledge</h4></div>
+      <ul class="sm"><li>Goa ki <b>local demand</b>, <b>seasonal</b> ups-downs</li><li><b>Compliance</b>: alcohol laws <b>har state mein alag</b></li><li>Local beer ko West se <b>baaki India</b> mein le jaana</li></ul>
+    </div>
+    <div class="box r">
+      <div class="vflex"><svg class="ic"><use href="#i-calendar"/></svg><h4>③ Risk Diversification</h4></div>
+      <ul class="sm"><li>Kuch mausam / events mein <b>beer</b> zyada, kuch mein <b>whisky</b></li><li>Goa mein <b>concerts, events</b></li><li>Dono hon to <b>risk kam</b></li></ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box r cloud">
+      <h4>Analogy:</h4>
+      <p class="sm">Chai ki dukaan wala <b>samose</b> bhi rakh le: same customer, same dukaan, <b>zyada bikri</b>. Garmi mein <b>lassi</b>, sardi mein <b>chai</b> → saal bhar income (diversification).</p>
+      <p class="sm" style="margin-top:6px"><b>Par dhyan:</b> samose ke liye <b>alag supplier, alag udhaar ki shartein, alag storage</b> chahiye. Wahi baat yahan beer vs whisky mein (credit cycle, warehousing alag).</p>
+    </div>
+    <div class="box r thick">
+      <h4>⚠ Par har synergy sach nahi hoti! (Feedback)</h4>
+      <ul class="sm">
+        <li><b>Distributors ke credit cycles</b> alag: local beer co. vs MNC whisky co. → ye synergy <b>expect mat karo</b>.</li>
+        <li><b>Warehousing</b>: beer aur whisky ki storage needs <b>bilkul alag</b>.</li>
+        <li><b>Restaurants ke menu fixed</b> hote hain, overnight nahi badalte → cross-selling <b>retail / thekas</b> mein chalega, <b>bars / restaurants</b> mein nahi.</li>
+      </ul>
+    </div>
+  </div>
+
+  <span class="sec r">2. Risks (Slide Se)</span>
+  <div class="c2">
+    <div class="box r flex"><svg class="ic"><use href="#i-list"/></svg>
+      <div><h4>Licensing</h4><p class="sm">Alcohol = heavily regulated. Har state ke <b>license aur laws alag</b>. Goa ka license baaki states mein kaam nahi aayega.</p></div>
+    </div>
+    <div class="box r flex"><svg class="ic"><use href="#i-warn"/></svg>
+      <div><h4>Dilution</h4><p class="sm">Slide pe sirf naam hai, detail nahi. Socho, jaise <b>brand dilution</b> (premium image pe asar) ya <b>ownership / value dilution</b> (deal ke baad hisse ki value).</p></div>
+    </div>
+  </div>
+
+  <div class="box r d sm"><b>Yaad rakho:</b> synergy bolte waqt <b>realistic</b> raho. Har synergy ke saath socho: <b>"Kya sach mein ho sakta hai? Kahan nahi chalega?"</b> Interviewer isi pe pakadta hai.</div>
+</section>
+
+<!-- ====================== PAGE 6 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 6 of 7</span><span class="hd r">CASE NOTES: M&amp;A Mock Case (Beer Acquisition)</span></div>
+  <div class="title r thick">Interviewer Feedback: Kya Miss Hua?</div>
+
+  <div class="row">
+    <div class="box r thick">
+      <div class="flex"><svg class="ic s"><use href="#i-check"/></svg><h4>Kya ACHHA tha ✔</h4></div>
+      <ul class="sm"><li>Pehle round ke sawaalon mein <b>bahut ground cover</b> kiya: company, product, customers, competitors.</li><li>Case ko <b>Financial / Operational / Synergies / Risks</b> mein todna "nice" tha.</li></ul>
+    </div>
+  </div>
+
+  <span class="sec r">Kya Sudhaarna Hai (Slide Ke 3 Points + Detail)</span>
+  <table class="sm">
+    <tr><th style="width:24%">Area</th><th style="width:38%">Kya miss hua</th><th>Kyun matter karta hai?</th></tr>
+    <tr><td><b>1. Clarifying Qs</b></td><td>Product format: <b>glass bottle vs can</b>? Channel mix: <b>B2B vs B2C</b>?</td><td>Format aur channel se cost, logistics, pricing sab badalta hai. B2C assume kiya, theek tha, par <b>clarify</b> karna tha.</td></tr>
+    <tr><td><b>2. Financials</b></td><td><b>Cap table</b>, <b>interest payments</b>, <b>profitability</b>, expected <b>NPV</b></td><td>Deal ki value aur funding samajhne ke liye zaroori.</td></tr>
+    <tr><td><b>3. Operational synergies</b></td><td><b>Distributors</b> stakeholder miss; credit cycles aur <b>warehousing</b> alag</td><td>Synergies ko <b>selectively</b> evaluate karo, sab kuch synergy nahi hota.</td></tr>
+    <tr><td><b>4. Channels</b></td><td>Restaurants / bars ke <b>fixed menus</b></td><td>Cross-selling sirf retail mein; on-trade mein turant nahi.</td></tr>
+    <tr><td><b>5. Deal lifecycle</b></td><td><b>Pre-acquisition</b> aur <b>post-acquisition</b> sawaal hi nahi</td><td>Case sirf "during" (due diligence) pe tha (page 7).</td></tr>
+  </table>
+
+  <span class="sec r">Pre-Acquisition: "Kyun?" Wale Sawaal</span>
+  <div class="c3">
+    <div class="box r ctr"><svg class="ic s"><use href="#i-search"/></svg><h4>Kyun yahi asset?</h4><p class="sm">Goa ki <b>yahi company</b> kyun? West mein koi aur kyun nahi?</p></div>
+    <div class="box r ctr"><svg class="ic s"><use href="#i-globe"/></svg><h4>Kyun yahi region?</h4><p class="sm">Pehle <b>East, South ya North India</b> kyun nahi? West / Goa hi kyun?</p></div>
+    <div class="box r ctr"><svg class="ic s"><use href="#i-handshake"/></svg><h4>Kyun acquisition?</h4><p class="sm">Objective clear tha (portfolio + India), par <b>ye route</b> kyun?</p></div>
+  </div>
+
+  <span class="sec r">Post-Acquisition: "Phir Kya?"</span>
+  <div class="row">
+    <div class="box r">
+      <ul class="sm"><li>Beer company ko <b>apne naam ke andar absorb</b> karenge?</li><li>Ya <b>alag entity</b> ki tarah chalayenge?</li><li><b>Integration plan</b> kya hai? Video mein ye bhi clear nahi hua.</li></ul>
+    </div>
+    <div class="box r cloud" style="flex:.8">
+      <h4>Analogy:</h4>
+      <p class="sm">Shaadi se pehle "<b>kyun</b>", shaadi ke time "<b>kundli match</b>", shaadi ke baad "<b>saath kaise rahenge</b>": teeno sochne padte hain!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 7 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 7 of 7</span><span class="hd r">CASE NOTES: M&amp;A Mock Case (Beer Acquisition)</span></div>
+  <div class="title r thick">Deal Lifecycle + Key Takeaways</div>
+
+  <span class="sec r">1. M&amp;A Deal Lifecycle (Poori Picture)</span>
+  <div class="flex" style="gap:4px; align-items:stretch">
+    <div class="box r" style="flex:1">
+      <div class="vflex"><svg class="ic"><use href="#i-bulb"/></svg><h4>PRE-Acquisition</h4><span class="tag">"Kyun?"</span></div>
+      <ul class="sm" style="margin-top:4px"><li>Deal ka rationale</li><li>Kyun ye region?</li><li>Kyun ye company?</li></ul>
+      <p class="xs ctr" style="margin-top:4px">✘ Case mein miss</p>
+    </div><span class="arrow">→</span>
+    <div class="box r thick" style="flex:1">
+      <div class="vflex"><svg class="ic"><use href="#i-search"/></svg><h4>DURING (Due Diligence)</h4><span class="tag inv">"Sahi hai?"</span></div>
+      <ul class="sm" style="margin-top:4px"><li>Financial</li><li>Commercial / Operational</li><li>Synergies + Risks</li></ul>
+      <p class="xs ctr" style="margin-top:4px">✔ Case ka main focus</p>
+    </div><span class="arrow">→</span>
+    <div class="box r" style="flex:1">
+      <div class="vflex"><svg class="ic"><use href="#i-handshake"/></svg><h4>POST-Acquisition</h4><span class="tag">"Phir kya?"</span></div>
+      <ul class="sm" style="margin-top:4px"><li>Absorb ya alag entity?</li><li>Integration plan</li><li>Brand strategy</li></ul>
+      <p class="xs ctr" style="margin-top:4px">✘ Case mein miss</p>
+    </div>
+  </div>
+
+  <span class="sec r">2. Key Takeaways (Interview Se Pehle Padho!)</span>
+  <div class="c2">
+    <ol class="sm box r">
+      <li>Clarifying Qs mein <b>Target + Acquirer dono</b> cover karo, shuru se hi.</li>
+      <li>Product ka <b>format</b> (glass / can) aur <b>channel mix</b> (B2B / B2C) poochho.</li>
+      <li>Structure: <b>Financial → Operational → Synergies → Risks</b>.</li>
+      <li>Financial mein <b>ROI, IRR, NPV, cap table, interest</b> mat bhoolo.</li>
+    </ol>
+    <ol class="sm box r" start="5">
+      <li>Operational mein <b>saare stakeholders</b> (distributors bhi!).</li>
+      <li>Synergies <b>realistic</b> rakho: credit cycle, warehousing, menu jaise <b>limits</b> socho.</li>
+      <li>Deal ko <b>pre → during → post</b> lifecycle mein dekho.</li>
+      <li>Har bucket se pehle <b>chhota pause</b>, end mein <b>check-in</b> karo.</li>
+    </ol>
+  </div>
+
+  <span class="sec r">3. India Alcohol Market: Case Ke Context Points</span>
+  <div class="c4">
+    <div class="box r ctr"><svg class="ic s"><use href="#i-list"/></svg><h4>State laws</h4><p class="xs">Har state ka alag rule, license, compliance</p></div>
+    <div class="box r ctr"><svg class="ic s"><use href="#i-store"/></svg><h4>Channels</h4><p class="xs">Thekas / retail vs bars, pubs, restaurants</p></div>
+    <div class="box r ctr"><svg class="ic s"><use href="#i-coins"/></svg><h4>Price-sensitive</h4><p class="xs">Zyada log sasti alcohol pe kharch karte hain</p></div>
+    <div class="box r ctr"><svg class="ic s"><use href="#i-calendar"/></svg><h4>Seasonality</h4><p class="xs">Mausam, tourist season, events se demand badalti</p></div>
+  </div>
+
+  <div class="flex" style="justify-content:center; margin-top:2px">
+    <svg class="ic l"><use href="#i-target"/></svg>
+    <div class="box r thick ctr"><span class="big">Kyun khareedein? → Sahi hai? → Phir kya karenge?</span></div>
+  </div>
+
+  <div class="src r">Source: "M&amp;A Mock Case Interview | The Strategy Sprint #4", Consulting &amp; Strategy Club, IIM Lucknow</div>
+</section>
+
+</body>
+</html>
