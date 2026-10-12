@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CookieCo Hinglish Notes</title>
+<style>
+@font-face { font-family: "PH"; src: url("fonts/patrick-hand-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "AD"; src: url("fonts/architects-daughter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "GH"; src: url("fonts/gochi-hand-latin-400-normal.woff2") format("woff2"); }
+:root { --ink: #161616; --soft: #4a4a4a; --paper: #fbfbf8; --rule: #e4e4e0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #cfcfca; }
+body { font-family: "PH", "AD", cursive; color: var(--ink); font-size: 18.5px; line-height: 1.34; }
+.page {
+  width: 800px; height: 1200px; margin: 24px auto; position: relative; overflow: hidden;
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(180deg, transparent 0, transparent 25px, var(--rule) 25px, var(--rule) 26px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  padding: 16px 22px 14px 40px;
+  display: flex; flex-direction: column; gap: 11px; justify-content: space-between;
+}
+.page::before { content: ""; position: absolute; left: 7px; top: 70px; width: 14px; height: 1100px;
+  background: radial-gradient(circle at 7px 7px, #e9e9e5 5px, #bdbdb8 5.5px, #bdbdb8 6.5px, transparent 7px) 0 0 / 14px 240px repeat-y; }
+
+/* rough hand-drawn borders */
+.r { position: relative; }
+.r::after { content: ""; position: absolute; inset: 0; border: 2px solid var(--ink); border-radius: 7px; filter: url(#rough); pointer-events: none; }
+.r.d::after { border-style: dashed; border-width: 1.6px; }
+.r.thick::after { border-width: 3px; border-radius: 4px; }
+.r.cloud::after { border-radius: 38px 46px 40px 50px / 44px 36px 48px 40px; }
+.r.round::after { border-radius: 16px; }
+
+.top { display: flex; gap: 14px; align-items: center; }
+.top .pg, .top .hd { font-family: "AD"; font-size: 14px; padding: 2px 10px; letter-spacing: .5px; }
+.top .hd { margin: 0 auto; transform: translateX(-40px); }
+.title { align-self: center; font-family: "GH"; font-size: 38px; line-height: 1.1; padding: 6px 22px 4px; text-align: center; }
+.sec { font-family: "GH"; font-size: 23px; padding: 1px 12px; align-self: flex-start; line-height: 1.3; }
+.box { padding: 9px 13px; }
+.box.cloud { padding: 12px 26px 16px 26px; }
+ol.box { padding-left: 38px; }
+.row { display: flex; gap: 10px; align-items: stretch; }
+.row > * { flex: 1; }
+.c2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.c3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.c4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+.c5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+h4 { font-family: "GH"; font-size: 20px; margin: 0 0 3px; font-weight: 400; line-height: 1.2; }
+.big { font-family: "GH"; font-size: 26px; line-height: 1.1; }
+.huge { font-family: "GH"; font-size: 34px; line-height: 1; }
+ul { margin: 0; padding-left: 18px; }
+li { margin: 1px 0; }
+ol { margin: 0; padding-left: 20px; }
+p { margin: 0; }
+.sm { font-size: 17px; line-height: 1.3; }
+.xs { font-size: 15px; line-height: 1.25; }
+.ctr { text-align: center; }
+.u { text-decoration: underline; text-underline-offset: 3px; }
+.strike { text-decoration: line-through; text-decoration-thickness: 2px; }
+.hl { background: repeating-linear-gradient(-45deg, transparent 0 3px, rgba(0,0,0,.13) 3px 4px); padding: 0 3px; }
+.ic { width: 52px; height: 52px; flex: none; fill: none; stroke: #161616; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.ic.s { width: 38px; height: 38px; }
+.ic.l { width: 74px; height: 74px; }
+.flex { display: flex; gap: 10px; align-items: center; }
+.vflex { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.arrow { font-family: "GH"; font-size: 26px; flex: none !important; align-self: center; }
+.lbl { font-family: "GH"; font-size: 17px; }
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1.5px solid var(--ink); padding: 3px 7px; vertical-align: top; text-align: left; }
+th { font-family: "GH"; font-weight: 400; font-size: 18px; background: repeating-linear-gradient(-45deg, transparent 0 4px, rgba(0,0,0,.07) 4px 5px); }
+td.n { text-align: center; font-family: "GH"; font-size: 18px; }
+.src { align-self: flex-end; font-size: 14px; padding: 3px 10px; }
+.tag { font-family: "GH"; display: inline-block; border: 2px solid var(--ink); border-radius: 4px; padding: 0 6px; font-size: 17px; line-height: 1.25; }
+.tag.inv { background: var(--ink); color: var(--paper); }
+.stars { letter-spacing: 1px; }
+svg text { font-family: "PH", cursive; }
+@media print { html, body { background: none; } .page { margin: 0; box-shadow: none; page-break-after: always; } }
+</style>
+</head>
+<body>
+
+<!-- shared defs: rough filter + line icons -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter>
+    <pattern id="hatch1" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#161616" stroke-width="1.6"/></pattern>
+    <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#161616"/></pattern>
+  </defs>
+  <g fill="none" stroke="#161616" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-building" viewBox="0 0 48 48"><rect x="12" y="5" width="24" height="39"/><path d="M17 11h4M27 11h4M17 18h4M27 18h4M17 25h4M27 25h4M17 32h4M27 32h4M21 44v-6h6v6M6 44h36"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 48 48"><path d="M4 44V24l10-6v6l10-6v6l10-6v26zM34 44V8h7v36M4 44h40M10 31h4M18 31h4M26 31h4M10 37h4M18 37h4M26 37h4"/></symbol>
+    <symbol id="i-warehouse" viewBox="0 0 48 48"><path d="M4 20 24 7l20 13v24H4zM14 44V28h20v16M14 33h20M14 38h20"/></symbol>
+    <symbol id="i-box" viewBox="0 0 48 48"><path d="M8 15 24 7l16 8v19l-16 8-16-8zM8 15l16 8 16-8M24 23v19M16 11l16 8"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 48 48"><path d="M3 13h25v21H3zM28 19h9l7 8v7H28"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></symbol>
+    <symbol id="i-store" viewBox="0 0 48 48"><path d="M6 18 10 7h28l4 11zM6 18c0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0M9 22v22h30V22M20 44V32h8v12"/></symbol>
+    <symbol id="i-cookie" viewBox="0 0 48 48"><path d="M24 6a18 18 0 1 0 18 18 6 6 0 0 1-7-6 6 6 0 0 1-6-7 5 5 0 0 1-5-5z"/><circle cx="17" cy="20" r="2" fill="#161616"/><circle cx="26" cy="30" r="2" fill="#161616"/><circle cx="16" cy="32" r="1.6" fill="#161616"/><circle cx="32" cy="24" r="1.6" fill="#161616"/></symbol>
+    <symbol id="i-up" viewBox="0 0 48 48"><path d="M5 5v38h38M10 36l9-10 7 6 13-16M32 15h7v7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 48 48"><path d="M5 5v38h38M10 14l9 9 7-5 13 15M39 26v7h-7"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 48 48"><path d="M17 30c-4-3-6-7-6-11a13 13 0 0 1 26 0c0 4-2 8-6 11v5H17zM18 40h12M20 44h8M24 1v2M8 6l2 2M40 6l-2 2"/></symbol>
+    <symbol id="i-people" viewBox="0 0 48 48"><circle cx="24" cy="14" r="5"/><circle cx="11" cy="18" r="4"/><circle cx="37" cy="18" r="4"/><path d="M15 38c0-8 4-13 9-13s9 5 9 13zM3 38c0-6 3-11 8-11 2 0 3 .5 4 1M45 38c0-6-3-11-8-11-2 0-3 .5-4 1"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 48 48"><path d="M20 30V9a4 4 0 0 1 8 0v21a8 8 0 1 1-8 0zM24 16v18M31 12h5M31 18h4M31 24h5"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 48 48"><path d="M8 12h32M19 12V7h10v5M12 12l2 31h20l2-31M20 19v18M28 19v18"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 48 48"><ellipse cx="22" cy="10" rx="13" ry="5"/><path d="M9 10v8c0 3 6 5 13 5s13-2 13-5v-8M9 18v8c0 3 6 5 13 5M9 26v8c0 3 6 5 13 5"/><circle cx="34" cy="33" r="10"/><path d="M34 27v12M31 30h5a2 2 0 0 1 0 4h-4a2 2 0 0 0 0 4h5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 48 48"><circle cx="20" cy="20" r="13"/><path d="M30 30l13 13M14 20a6 6 0 0 1 6-6"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 48 48"><path d="M24 5 44 41H4zM24 18v11M24 35v1"/></symbol>
+    <symbol id="i-target" viewBox="0 0 48 48"><circle cx="22" cy="26" r="17"/><circle cx="22" cy="26" r="10"/><circle cx="22" cy="26" r="3"/><path d="M22 26 42 6M36 6h6v6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="4"/><path d="M14 25l7 7 13-15"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l8 5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 48 48"><path d="M6 8h30v20H18l-8 7v-7H6zM40 16h4v18h-4v6l-6-6H22"/></symbol>
+    <symbol id="i-tie" viewBox="0 0 48 48"><circle cx="24" cy="11" r="7"/><path d="M8 46c0-12 7-20 16-20s16 8 16 20M21 26l3 4 3-4M24 30l-3 10 3 4 3-4z"/></symbol>
+    <symbol id="i-list" viewBox="0 0 48 48"><rect x="8" y="5" width="32" height="39" rx="3"/><path d="M15 15h3M22 15h12M15 24h3M22 24h12M15 33h3M22 33h12"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="34" rx="3"/><path d="M5 18h38M14 5v8M34 5v8M12 26h4M22 26h4M32 26h4M12 34h4M22 34h4"/></symbol>
+  </g>
+</svg>
+
+<!-- ====================== PAGE 1 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 1 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">CookieCo Case: Problem Hai Kya?</div>
+
+  <span class="sec r">Simple Bhasha Mein:</span>
+  <div class="row">
+    <div class="box r" style="flex:1.6">
+      <p><b>CookieCo</b> = US ki ek badi company jo <b>packaged cookies banati bhi hai aur bechti bhi hai</b>.</p>
+      <p style="margin-top:4px">Pichle <b>2–3 saal</b> se iska <b class="u">profit gir raha hai</b>, jabki baaki cookie industry <b class="u">achhe se grow</b> kar rahi hai.</p>
+      <p style="margin-top:4px">CookieCo BCG ke paas aayi hai: <span class="hl">(1) problem ki jad (root cause) dhoondo, (2) usse ulta (reverse) kaise karein, batao.</span></p>
+    </div>
+    <div class="vflex" style="flex:1">
+      <div class="flex" style="gap:18px">
+        <div class="vflex"><svg class="ic l"><use href="#i-up"/></svg><span class="lbl">Industry ↑</span><span class="xs">healthy growth</span></div>
+        <span class="arrow">vs</span>
+        <div class="vflex"><svg class="ic l"><use href="#i-down"/></svg><span class="lbl">CookieCo ↓</span><span class="xs">profit decline</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="box r d" style="flex:1.25">
+      <h4>Case Prompt (original):</h4>
+      <p class="sm"><i>"Our client is a national manufacturer and seller of packaged cookies in the U.S. In the last 2–3 years, they've seen a decline in profits whereas the rest of the industry has experienced healthy growth. They have come to us to identify the root cause of this issue and how they can reverse it."</i></p>
+    </div>
+    <div class="box r cloud" style="flex:1">
+      <h4>Example:</h4>
+      <p class="sm">Socho poore shehar mein mithai ki bikri badh rahi hai, par <b>ek dukaan</b> ka munafa gir raha hai. Matlab problem <b>bazaar mein nahi</b>, <b>dukaan ke andar</b> hai (shayad kharcha badh gaya).</p>
+    </div>
+  </div>
+
+  <span class="sec r">1. Clarifying Questions (Ed ne kya poocha?)</span>
+  <table class="sm">
+    <tr><th style="width:32%">Sawaal</th><th style="width:28%">Jawaab</th><th>Kyun poochna zaroori? (context bhi bolo!)</th></tr>
+    <tr><td>Scope sirf <b>US</b> hai?</td><td>Haan ✔</td><td>US ke bahar supply chain bahut complex ho jaati hai → scope chhota rakho</td></tr>
+    <tr><td>Sirf <b>cookies</b>, ya aur products bhi?</td><td>Aur products bhi bechte hain, par <b>focus sirf cookie segment</b></td><td>Galat business pe time waste na ho</td></tr>
+    <tr><td>Structure ke liye 1–2 min le sakta hoon?</td><td>"Go for it" ✔</td><td>Socho, phir bolo, structured dikhoge</td></tr>
+  </table>
+
+  <span class="sec r">2. BCG Style Case = Candidate-Led</span>
+  <div class="row">
+    <div class="box r" style="flex:1.3">
+      <ul class="sm">
+        <li><b>Tum</b> case ko lead karte ho; interviewer sirf guide karta hai.</li>
+        <li>Numbers / exhibits mile to <b>khud</b> unhe apne structure mein fit karo.</li>
+        <li>Conversational hota hai, beech mein naya data aata hai → <b>pivot</b> karna padta hai.</li>
+      </ul>
+    </div>
+    <div class="box r d vflex" style="flex:.7; justify-content:center">
+      <svg class="ic"><use href="#i-chat"/></svg>
+      <p class="sm ctr">Interviewer: Jenny Rae Le Roux (ex-Bain)<br>Candidate: Edward</p>
+    </div>
+  </div>
+
+  <span class="sec r">3. Interview Ka Flow (Ek Nazar Mein)</span>
+  <div class="flex sm" style="flex-wrap:wrap; gap:5px 4px">
+    <span class="tag">Recap</span>→<span class="tag">Clarify</span>→<span class="tag">Structure</span>→<span class="tag">Rev ya Cost?</span>→<span class="tag">Costs brainstorm</span>→<span class="tag inv">Exhibit 1</span>→<span class="tag">Storage breakdown</span>→<span class="tag">Inventory loss fix</span>→<span class="tag inv">Final Rec</span>→<span class="tag">Feedback</span>
+  </div>
+
+  <div class="src r">Source: "BCG Case Interview Example – CookieCo" (mock interview video)</div>
+</section>
+
+<!-- ====================== PAGE 2 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 2 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">Framework: Problem Ko Todna</div>
+
+  <span class="sec r">1. Basic Formula (Yaad Rakho)</span>
+  <div class="flex" style="justify-content:center; gap:8px">
+    <div class="box r ctr"><span class="big">Profit</span></div><span class="arrow">=</span>
+    <div class="box r ctr"><span class="big">Revenue</span><br><span class="xs">(kamaai)</span></div><span class="arrow">−</span>
+    <div class="box r ctr"><span class="big">Cost</span><br><span class="xs">(kharcha)</span></div>
+    <span style="width:24px"></span>
+    <div class="box r ctr"><span class="big">Revenue</span></div><span class="arrow">=</span>
+    <div class="box r ctr"><span class="lbl">Units</span><br><span class="xs">(kitni cookies)</span></div><span class="arrow">×</span>
+    <div class="box r ctr"><span class="lbl">Price</span><br><span class="xs">(per unit)</span></div>
+  </div>
+
+  <span class="sec r">2. Ed Ka Structure (Profit Tree)</span>
+  <svg viewBox="0 0 730 250" width="730" height="250" style="align-self:center">
+    <g fill="none" stroke="#161616" stroke-width="2" stroke-linecap="round" filter="url(#rough)">
+      <rect x="285" y="4" width="160" height="40" rx="6" stroke-width="3"/>
+      <path d="M365 44v18M110 62h510M110 62v14M365 62v14M620 62v14"/>
+      <rect x="40" y="76" width="140" height="36" rx="6"/><rect x="295" y="76" width="140" height="36" rx="6"/><rect x="550" y="76" width="140" height="36" rx="6"/>
+      <path d="M110 112v14M60 126h100M60 126v12M160 126v12"/>
+      <path d="M365 112v14M305 126h120M305 126v12M425 126v12"/>
+      <path d="M620 112v14M570 126h100M570 126v12M670 126v12"/>
+      <rect x="18" y="138" width="84" height="54" rx="5" stroke-dasharray="5 4"/><rect x="118" y="138" width="84" height="54" rx="5" stroke-dasharray="5 4"/>
+      <rect x="248" y="138" width="114" height="74" rx="5" stroke-dasharray="5 4"/><rect x="370" y="138" width="114" height="74" rx="5" stroke-dasharray="5 4"/>
+      <rect x="520" y="138" width="100" height="74" rx="5" stroke-dasharray="5 4"/><rect x="628" y="138" width="98" height="74" rx="5" stroke-dasharray="5 4"/>
+    </g>
+    <g fill="#161616" text-anchor="middle">
+      <text x="365" y="31" font-size="22">PROFIT ↓</text>
+      <text x="110" y="100" font-size="19">Revenue</text><text x="365" y="100" font-size="19">Costs</text><text x="620" y="100" font-size="19">Market</text>
+      <text x="60" y="160" font-size="16">Volume</text><text x="60" y="180" font-size="13">(# cookies)</text>
+      <text x="160" y="160" font-size="16">Price</text><text x="160" y="180" font-size="13">(per unit)</text>
+      <text x="305" y="160" font-size="16">Fixed</text><text x="305" y="180" font-size="13">labour, warehouse,</text><text x="305" y="197" font-size="13">distribution</text>
+      <text x="427" y="160" font-size="16">Variable</text><text x="427" y="180" font-size="13">ingredients,</text><text x="427" y="197" font-size="13">raw materials</text>
+      <text x="570" y="160" font-size="15">Competitors</text><text x="570" y="180" font-size="13">market share</text><text x="570" y="197" font-size="13">kha rahe?</text>
+      <text x="677" y="160" font-size="15">Innovation /</text><text x="677" y="177" font-size="15">consumer</text><text x="677" y="197" font-size="13">e.g. sugar-free?</text>
+    </g>
+    <text x="365" y="242" text-anchor="middle" font-size="15" fill="#161616">↑ Ed: "abhi surface level rakhta hoon", interviewer ko ye pasand nahi aaya (neeche dekho)</text>
+  </svg>
+
+  <span class="sec r">3. Hypothesis: Revenue Problem Ya Cost Problem?</span>
+  <div class="flex sm" style="gap:4px">
+    <div class="box r ctr">Market<br><b>badh raha</b> ↑</div><span class="arrow">→</span>
+    <div class="box r ctr">Competitors bhi<br><b>badh rahe</b> ↑</div><span class="arrow">→</span>
+    <div class="box r ctr">Toh hum bhi shayad<br><b>theek bech rahe</b></div><span class="arrow">→</span>
+    <div class="box r ctr">Par <b>margin</b><br>kam ho raha ↓</div><span class="arrow">→</span>
+    <div class="box r thick ctr"><span class="big">COST</span><br>problem!</div>
+  </div>
+  <div class="row">
+    <div class="box r cloud" style="flex:.8">
+      <h4>Note:</h4>
+      <p class="sm"><b>Hypothesis</b> = pehla smart andaaza, jise data se <b>check</b> karte hain. Galat nikle to pivot karo, koi baat nahi.</p>
+    </div>
+    <div class="box r d" style="flex:1.2">
+      <h4>Feedback: ye RECAP mein hi bol dena tha</h4>
+      <p class="sm">"Baaki sab achha kar rahe hain → kya ye cost issue hai? Inflation + consumer goods ki strong demand dekh ke lagta hai <b>cost</b> hi hai." Ye context dene se interviewer ko pata chalta ki tum <b>profitability</b> pe focused ho.</p>
+    </div>
+  </div>
+
+  <span class="sec r">4. Structure Ko 3/4 Se 4/4 Kaise Banayein?</span>
+  <div class="c3">
+    <div class="box r"><h4>① Costs PEHLE present karo</h4><p class="sm">Generic profit tree mat padho. Bolo: "Mujhe lagta hai issue <b>cost</b> mein hai, wahin se shuru karta hoon." = hypothesis-driven.</p></div>
+    <div class="box r"><h4>② "High level" mat raho</h4><p class="sm">Depth dikhao. Revenue → units, price, <b>product mix, discounting, inflation ka impact</b>. Costs → har bucket ke andar 2–3 items.</p></div>
+    <div class="box r"><h4>③ MECE rakho</h4><p class="sm">Buckets overlap na karein. "Market" bucket mein revenue wali cheezein dobara mat daalo. <span class="xs">(MECE = Mutually Exclusive, Collectively Exhaustive)</span></p></div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 3 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 3 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">Cookie Ki Journey = Paisa Kahan Lagta Hai?</div>
+
+  <span class="sec r">1. Life of a Cookie (Ed ka "chronological" approach)</span>
+  <div class="flex" style="gap:4px; align-items:stretch">
+    <div class="box r vflex ctr" style="flex:1"><svg class="ic"><use href="#i-factory"/></svg><span class="lbl">Banana</span><span class="xs">(Make)</span></div><span class="arrow">→</span>
+    <div class="box r vflex ctr" style="flex:1"><svg class="ic"><use href="#i-warehouse"/></svg><span class="lbl">Store karna</span><span class="xs">(Warehouse)</span></div><span class="arrow">→</span>
+    <div class="box r vflex ctr" style="flex:1"><svg class="ic"><use href="#i-box"/></svg><span class="lbl">Pack karna</span><span class="xs">(Packaging)</span></div><span class="arrow">→</span>
+    <div class="box r vflex ctr" style="flex:1"><svg class="ic"><use href="#i-truck"/></svg><span class="lbl">Bhejna</span><span class="xs">(Distribution)</span></div><span class="arrow">→</span>
+    <div class="box r vflex ctr" style="flex:1"><svg class="ic"><use href="#i-store"/></svg><span class="lbl">Dukaan</span><span class="xs">(Retailer)</span></div>
+  </div>
+  <div class="c5 xs" style="margin-right:6px">
+    <div class="box r d">Atta, cheeni, butter (raw materials), factory chalana, per-unit cost</div>
+    <div class="box r d">Warehouse ka kiraya, AC / climate, workers</div>
+    <div class="box r d">Dabbe, wrapper, labels</div>
+    <div class="box r d">Trucks, drivers, freight, fuel</div>
+    <div class="box r d">(Client ka cost nahi, par yahin cookie bikti hai)</div>
+  </div>
+
+  <span class="sec r">2. Fixed vs Variable Cost</span>
+  <div class="c2">
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-building"/></svg><h4>FIXED COST</h4></div>
+      <ul class="sm"><li>Production kam ho ya zyada, <b>utna hi lagta hai</b>.</li><li>e.g. labour, warehouse ka kiraya, distribution setup.</li></ul>
+      <p class="sm" style="margin-top:4px"><b>Analogy:</b> dukaan ka kiraya. Bikri ho ya na ho, dena padega.</p>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-cookie"/></svg><h4>VARIABLE COST</h4></div>
+      <ul class="sm"><li>Jitni cookies, <b>utna kharcha</b>.</li><li>e.g. ingredients, raw materials.</li></ul>
+      <p class="sm" style="margin-top:4px"><b>Analogy:</b> jitne parathe banaoge, utna atta lagega.</p>
+    </div>
+  </div>
+
+  <span class="sec r">3. Macro Context (2020–2022): Bahar Kya Ho Raha Tha?</span>
+  <div class="row">
+    <div class="box r" style="flex:1.4">
+      <div class="flex sm" style="gap:4px; flex-wrap:wrap">
+        <span class="tag">Pandemic + Recession</span>→<span class="tag">Labour kam</span>→<span class="tag">Supply ↓</span>→<span class="tag inv">Distribution MEHENGA</span>
+      </div>
+      <p class="xs" style="margin-top:3px">(labour = drivers, freight operators; demand utni hi rahi)</p>
+      <ul class="sm" style="margin-top:6px">
+        <li><b>Raw materials</b> bhi mehenge: labour ki availability kam + industry grow → ingredients ki demand zyada.</li>
+        <li>Supply–demand ka simple rule: cheez kam, chahne wale zyada → <b>price premium</b>.</li>
+      </ul>
+    </div>
+    <div class="box r cloud" style="flex:1">
+      <h4>Lekin ek twist! 🤔</h4>
+      <p class="sm">Distribution mehenga hua to <b>poori industry</b> pe asar padega, sirf CookieCo pe nahi. Toh ye akela reason nahi ho sakta ki <b>sirf hamara</b> profit gira. Isliye data aate hi <b>pivot</b>.</p>
+    </div>
+  </div>
+
+  <span class="sec r">4. Data Se Pehle Ed Ka Guess</span>
+  <div class="row">
+    <div class="box r flex"><svg class="ic"><use href="#i-target"/></svg><p class="sm">#1 cost area = <b>Distribution</b> (storing / distribution mein root cause hoga). Raw materials ka data bhi maanga.</p></div>
+    <div class="box r d"><h4>Interviewer ka point:</h4><p class="sm">Costs kya-kya hain, ye <b>khud se</b> (bina pooche) list karna chahiye tha. BCG mein khud ko lead karna hota hai.</p></div>
+  </div>
+
+  <div class="box r d sm">
+    <b>Yaad rakho:</b> Cost brainstorm karna ho to "journey" approach (bana → store → pack → bhejo) best hai. Isse <b>kuch miss nahi hota</b> aur structure apne aap MECE ban jaata hai.
+  </div>
+</section>
+
+<!-- ====================== PAGE 4 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 4 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">Exhibit 1: Data Kya Bol Raha Hai?</div>
+
+  <span class="sec r">Cost Segments, Last 3 Years ($ Million)</span>
+  <svg viewBox="0 0 730 270" width="730" height="270" style="align-self:center">
+    <g filter="url(#rough)" stroke="#161616" stroke-width="2" fill="none">
+      <path d="M50 14V232H720"/>
+      <path d="M45 192h8M45 152h8M45 112h8M45 72h8M45 32h8"/>
+    </g>
+    <g font-size="13" fill="#161616" text-anchor="end"><text x="40" y="236">0</text><text x="40" y="196">5</text><text x="40" y="156">10</text><text x="40" y="116">15</text><text x="40" y="76">20</text><text x="40" y="36">25</text></g>
+    <!-- y = 232 - v*8 ; groups at 120, 255, 390, 525, 660 ; bars 30 wide -->
+    <g filter="url(#rough)" stroke="#161616" stroke-width="2">
+      <rect x="73" y="152" width="30" height="80" fill="#fff"/><rect x="105" y="144" width="30" height="88" fill="url(#hatch1)"/><rect x="137" y="136" width="30" height="96" fill="#161616"/>
+      <rect x="208" y="136" width="30" height="96" fill="#fff"/><rect x="240" y="120" width="30" height="112" fill="url(#hatch1)"/><rect x="272" y="72" width="30" height="160" fill="#161616"/>
+      <rect x="343" y="192" width="30" height="40" fill="#fff"/><rect x="375" y="192" width="30" height="40" fill="url(#hatch1)"/><rect x="407" y="184" width="30" height="48" fill="#161616"/>
+      <rect x="478" y="184" width="30" height="48" fill="#fff"/><rect x="510" y="184" width="30" height="48" fill="url(#hatch1)"/><rect x="542" y="184" width="30" height="48" fill="#161616"/>
+      <rect x="613" y="200" width="30" height="32" fill="#fff"/><rect x="645" y="200" width="30" height="32" fill="url(#hatch1)"/><rect x="677" y="192" width="30" height="40" fill="#161616"/>
+    </g>
+    <g font-size="14" fill="#161616" text-anchor="middle">
+      <text x="120" y="252">Raw materials</text><text x="255" y="252">Storage &amp;</text><text x="255" y="267">Warehousing</text>
+      <text x="390" y="252">Distribution</text><text x="525" y="252">SG&amp;A</text><text x="660" y="252">Marketing &amp;</text><text x="660" y="267">Promotions</text>
+    </g>
+    <g font-size="14" fill="#161616">
+      <rect x="470" y="14" width="14" height="14" fill="#fff" stroke="#161616" stroke-width="1.5"/><text x="489" y="26">2020</text>
+      <rect x="535" y="14" width="14" height="14" fill="url(#hatch1)" stroke="#161616" stroke-width="1.5"/><text x="554" y="26">2021</text>
+      <rect x="600" y="14" width="14" height="14" fill="#161616"/><text x="619" y="26">2022</text>
+    </g>
+    <ellipse cx="255" cy="104" rx="68" ry="58" fill="none" stroke="#161616" stroke-width="2.4" stroke-dasharray="7 5" filter="url(#rough)"/>
+    <text x="330" y="70" font-size="20" fill="#161616">← SABSE BADA JUMP: ~12 → ~20</text>
+  </svg>
+
+  <span class="sec r">Numbers Ko Table Mein Dekho</span>
+  <table class="sm">
+    <tr><th>Segment</th><th>2020</th><th>2021</th><th>2022</th><th>Badhat (2 saal)</th><th style="width:34%">Matlab kya?</th></tr>
+    <tr><td><b>Storage &amp; Warehousing</b></td><td class="n">~12</td><td class="n">~14</td><td class="n">~20</td><td class="n"><b>~+67%</b> ⚠</td><td><b>Sabse bada jump → FOCUS yahan</b></td></tr>
+    <tr><td>Raw materials</td><td class="n">~10</td><td class="n">~11</td><td class="n">~12</td><td class="n">~+20%</td><td>Steady, linear. Inflation mein expected, darne wali baat nahi</td></tr>
+    <tr><td>Distribution</td><td class="n">~5</td><td class="n">~5</td><td class="n">~6</td><td class="n">~+20%</td><td>1 saal flat, phir thoda ↑ (2022 macro anomaly?)</td></tr>
+    <tr><td>SG&amp;A</td><td class="n">~6</td><td class="n">~6</td><td class="n">~6</td><td class="n">0%</td><td>Bilkul flat</td></tr>
+    <tr><td>Marketing &amp; Promo</td><td class="n">~4</td><td class="n">~4</td><td class="n">~5</td><td class="n">~+25%</td><td>Thoda sa ↑, chhota amount</td></tr>
+    <tr><td><b>TOTAL</b></td><td class="n">~37</td><td class="n">~40</td><td class="n">~49</td><td class="n"><b>~+$12M</b></td><td>Isme se <b>~$8M sirf Storage</b> se = badhat ka <b>~2/3</b>!</td></tr>
+  </table>
+
+  <div class="row">
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-warn"/></svg><h4>Ed Ki Galti: Units!</h4></div>
+      <p class="sm">Ed ne bola "12% se 22%", par exhibit <b>$ million</b> mein tha, <b>% mein nahi</b>. Rule: pehle <b>units padho</b>, phir % khud nikaal ke batao:</p>
+      <p class="ctr" style="margin-top:4px"><span class="tag">% Change = (New − Old) ÷ Old × 100</span></p>
+      <p class="ctr sm" style="margin-top:3px">(20 − 12) ÷ 12 × 100 ≈ <b>67%</b></p>
+    </div>
+    <div class="box r cloud">
+      <div class="flex"><svg class="ic s"><use href="#i-search"/></svg><h4>Smart Insight</h4></div>
+      <p class="sm">Distribution ↑ aur raw materials ↑ ka matlab ho sakta hai ki hum <b>zyada maal bana aur bhej rahe hain</b> → yaani <b>revenue badh raha hai</b> → isse <b>cost hypothesis confirm</b> hoti hai.</p>
+    </div>
+  </div>
+  <p class="xs" style="text-align:right">*Values approx hain (video low-res tha, chart se padhe). Ed ne storage 2022 ko ~22 bola.</p>
+</section>
+
+<!-- ====================== PAGE 5 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 5 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">Storage &amp; Warehousing: Andar Kya Hai?</div>
+
+  <span class="sec r">1. Drill Down: Excel Sheet Banao To Kaunse Rows Honge?</span>
+  <div class="c4">
+    <div class="box r vflex ctr"><svg class="ic"><use href="#i-warehouse"/></svg><h4>1. Kiraya (Rent)</h4><p class="sm">Bade warehouse ka rent. Sabse bada cost item.</p></div>
+    <div class="box r vflex ctr"><svg class="ic"><use href="#i-thermo"/></svg><h4>2. Climate Control</h4><p class="sm">Food hai → na zyada garmi, na nami (humidity).</p></div>
+    <div class="box r vflex ctr"><svg class="ic"><use href="#i-people"/></svg><h4>3. Labour</h4><p class="sm">Maal andar-bahar karne wale workers (Amazon warehouse jaisa).</p></div>
+    <div class="box r thick vflex ctr"><svg class="ic"><use href="#i-trash"/></svg><h4>4. Inventory Loss ⚠</h4><p class="sm">Cookies <b>EXPIRE</b> ho jaati hain! Bik nahi paayi to phenkni padti hain.</p></div>
+  </div>
+
+  <div class="row">
+    <div class="box r cloud" style="flex:1">
+      <h4>Analogy:</h4>
+      <p class="sm">Sofa saalon warehouse mein pada rahe, <b>kharab nahi hota</b>. Cookie ki <b>expiry date</b> hoti hai. Food business mein <b>"time = paisa"</b>.</p>
+    </div>
+    <div class="box r d" style="flex:1.2">
+      <h4>Ed ka sawaal: ye cost kis bucket mein jaata hai?</h4>
+      <p class="sm">Storage, materials ya distribution? Exact accounting bucket pata na ho to <b>bolke assume karo</b>. Interviewer ne poocha: "Books mein ye kaise dikhega?"</p>
+    </div>
+  </div>
+
+  <span class="sec r">2. Expired Cookie = P&amp;L Pe Seedha Nuksaan</span>
+  <div class="flex" style="justify-content:center; gap:8px">
+    <div class="box r ctr"><span class="lbl">Revenue</span><br><span class="huge">$0</span><br><span class="xs">(bika hi nahi)</span></div><span class="arrow">−</span>
+    <div class="box r ctr"><span class="lbl">Cost</span><br><span class="big">Banana + Store</span><br><span class="xs">(distribution shayad nahi laga)</span></div><span class="arrow">=</span>
+    <div class="box r thick ctr"><span class="lbl">Profit</span><br><span class="huge">NEGATIVE</span><br><span class="xs">poora kharcha, zero kamaai</span></div>
+  </div>
+  <div class="box r d sm">
+    <b>Example (samjhane ke liye numbers):</b> ek dabba banane mein $1.00 aur store karne mein $0.20 laga → expire ho gaya → <b>$1.20 ka seedha loss</b>, aur bechne se jo margin milta wo bhi gaya.
+  </div>
+
+  <span class="sec r">3. Naya Data (Interviewer Ne Diya)</span>
+  <div class="row">
+    <div class="box r thick flex" style="flex:1.2"><svg class="ic l"><use href="#i-up"/></svg>
+      <div><p class="big">Inventory losses ne SPIKE kiya hai</p><p class="sm">pichle 2–3 saal mein. Matlab storage cost badhne ka bada reason = <b>expired / waste stock</b>.</p></div>
+    </div>
+    <div class="box r flex" style="flex:.8"><svg class="ic"><use href="#i-clock"/></svg>
+      <p class="sm">Ed ne socha: <b>"20 second organize kar loon?"</b> Interviewer ne "sirf is baar" allow kiya. (Page 8: kab time maangna theek hai)</p>
+    </div>
+  </div>
+
+  <span class="sec r">4. Puri Story Ab Tak (Chain)</span>
+  <div class="flex sm" style="gap:4px; flex-wrap:wrap; justify-content:center">
+    <span class="tag">Profit ↓, market ↑</span>→<span class="tag">Cost problem</span>→<span class="tag">Exhibit: Storage &amp; WH sabse zyada ↑</span>→<span class="tag">Breakdown: rent, climate, labour, loss</span>→<span class="tag inv">Inventory loss SPIKE = root cause</span>
+  </div>
+</section>
+
+<!-- ====================== PAGE 6 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 6 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">Solutions: Inventory Loss Kaise Kam Karein?</div>
+
+  <div class="box r d sm"><b>Sawaal tha:</b> "Can you suggest a couple of ways to <u>bring them under control</u>?" → yaani <b>SOLUTIONS</b> chahiye the, sirf problems nahi!</div>
+
+  <span class="sec r">Problem → Fix → Analogy</span>
+  <div class="c2">
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-thermo"/></svg><h4>1. Storage Conditions Kharab</h4></div>
+      <p class="sm"><b>Fix:</b> Climate control: temperature aur humidity sahi rakho.</p>
+      <p class="sm"><b>Caveat:</b> achhi <b>packaging</b> ko bhi cookies bachani chahiye.</p>
+      <p class="sm"><b>Analogy:</b> fridge ka temperature galat ho to doodh jaldi phat jaata hai.</p>
+    </div>
+    <div class="box r thick">
+      <div class="flex"><svg class="ic s"><use href="#i-list"/></svg><h4>2. Inventory Management Weak</h4></div>
+      <p class="sm"><b>Problem:</b> dabbe peeche kone mein pade reh gaye, yaad hi nahi rahe.</p>
+      <p class="sm"><b>Fix:</b> proper tracking system + <b>FIFO</b> (First In, First Out). <span class="strike">LIFO</span> ✗ (Ed ne pehle galti se LIFO bola, phir sudhaara.)</p>
+      <p class="sm"><b>Analogy:</b> ghar mein <b>purana doodh pehle</b> use karte ho, naya baad mein.</p>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-factory"/></svg><h4>3. Over-Production / Kam Turnover</h4></div>
+      <p class="sm"><b>Fix:</b> <b>demand forecasting + analytics</b>: kitna bikega, utna hi banao (recession mein log kam khareedte hain).</p>
+      <p class="sm"><b>Analogy:</b> shaadi mein guest list dekh ke khana banate ho, warna bacha khana waste.</p>
+    </div>
+    <div class="box r">
+      <div class="flex"><svg class="ic s"><use href="#i-cookie"/></svg><h4>4. Shelf Life Kam</h4></div>
+      <p class="sm"><b>Fix:</b> recipe / packaging optimize karo taaki cookies <b>zyada din fresh</b> rahein.</p>
+      <p class="sm"><b>Note:</b> Ed ne ise last mein rakha. Pehle 2 pe zyada focus.</p>
+    </div>
+  </div>
+
+  <span class="sec r">FIFO vs LIFO (Ek Diagram Mein)</span>
+  <svg viewBox="0 0 730 120" width="730" height="120" style="align-self:center">
+    <g filter="url(#rough)" stroke="#161616" stroke-width="2" fill="none" stroke-linecap="round">
+      <rect x="150" y="20" width="430" height="70" rx="4"/>
+      <rect x="170" y="35" width="70" height="42" fill="#161616"/><rect x="255" y="35" width="70" height="42" fill="url(#hatch1)"/><rect x="340" y="35" width="70" height="42" fill="url(#dots)"/><rect x="425" y="35" width="70" height="42" fill="#fff"/><rect x="505" y="35" width="60" height="42" fill="#fff" stroke-dasharray="4 3"/>
+      <path d="M600 56h80M672 48l9 8-9 8"/>
+      <path d="M130 56H40M48 48l-9 8 9 8"/>
+    </g>
+    <g font-size="15" fill="#161616" text-anchor="middle">
+      <text x="640" y="40">NAYA maal</text><text x="640" y="84">andar aata hai</text>
+      <text x="85" y="40">PURANA maal</text><text x="85" y="84">pehle bahar ✔ FIFO</text>
+      <text x="205" y="108">sabse purana</text><text x="460" y="108">sabse naya</text>
+      <text x="365" y="14">warehouse shelf →</text>
+    </g>
+  </svg>
+
+  <div class="row">
+    <div class="box r cloud">
+      <h4>Feedback (Creative: 3/4)</h4>
+      <ul class="sm"><li>Ed ne pehle <b>problems</b> bataye, <b>solutions</b> nahi → wapas jaana pada.</li><li>Brainstorm <b>likha nahi</b>; pen ka cap band karke rakh diya!</li><li><b>Jo poocha gaya, wahi answer karo.</b></li></ul>
+    </div>
+    <div class="box r d">
+      <h4>Better Answer Ka Format:</h4>
+      <p class="sm">"Do tarah ke solutions hain: <b>(1) Operations</b>: climate control, FIFO system. <b>(2) Planning</b>: demand forecasting, production ko demand se match karna. Pehle <b>FIFO + forecasting</b> karunga kyunki sasta aur jaldi lagta hai."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 7 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 7 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">Final Recommendation: CEO Ko Kya Bolein?</div>
+
+  <div class="flex" style="gap:12px">
+    <svg class="ic l"><use href="#i-tie"/></svg>
+    <div class="box r d sm" style="flex:1">Interviewer: "Tum elevator mein ho, CEO saamne hai. Kya bologe?" BCG mein <b>bina prep time</b> ke seedha bolna hota hai.</div>
+  </div>
+
+  <span class="sec r">1. Recommendation Ka Format (5 Steps)</span>
+  <div class="flex" style="gap:4px; align-items:stretch">
+    <div class="box r ctr" style="flex:1"><span class="big">1</span><h4>Context</h4><p class="xs">1 line: problem kya thi</p></div><span class="arrow">→</span>
+    <div class="box r ctr" style="flex:1"><span class="big">2</span><h4>Finding</h4><p class="xs">root cause + number</p></div><span class="arrow">→</span>
+    <div class="box r thick ctr" style="flex:1"><span class="big">3</span><h4>Recs</h4><p class="xs">numbered actions</p></div><span class="arrow">→</span>
+    <div class="box r ctr" style="flex:1"><span class="big">4</span><h4>Risks</h4><p class="xs">numbered</p></div><span class="arrow">→</span>
+    <div class="box r ctr" style="flex:1"><span class="big">5</span><h4>Next Steps</h4><p class="xs">numbered</p></div>
+  </div>
+
+  <span class="sec r">2. Ed Ne Kya Bola? (Score: 2.5 / 4)</span>
+  <div class="row">
+    <div class="box r d" style="flex:1.1">
+      <ul class="sm">
+        <li>Storage &amp; warehousing cost <b>bahut zyada</b> ho gaya → profit pe asar.</li>
+        <li>Root cause: <b>climate</b> + <b>management systems</b>.</li>
+        <li>Next step: management system banao taaki inventory time pe nikle.</li>
+        <li>Risk: aur paisa lagaya aur issue jaldi na mila to profit aur girega.</li>
+      </ul>
+    </div>
+    <div class="box r" style="flex:.9">
+      <h4>Kya Missing Tha?</h4>
+      <ul class="sm">
+        <li>Shuru mein <b>1 line context</b> nahi.</li>
+        <li><b>Story format</b> nahi tha.</li>
+        <li>Risks / next steps <b>numbered nahi</b>: interviewer ko pata nahi chala 1, 2 ya 3 the.</li>
+        <li>Brainstorm notes hote to points clear hote.</li>
+      </ul>
+    </div>
+  </div>
+
+  <span class="sec r">3. Better Version (Sample Script)</span>
+  <div class="box r thick">
+    <p class="sm"><b>① Context:</b> "CookieCo ka profit gir raha hai jabki market aur competitors grow kar rahe hain."</p>
+    <p class="sm"><b>② Finding:</b> "Problem <b>cost</b> mein hai. Storage &amp; warehousing 2 saal mein <b>~$12M se ~$20M</b> (~+67%) ho gaya, aur iski wajah hai <b>inventory losses</b>: cookies expire ho rahi hain."</p>
+    <p class="sm"><b>③ Recommendations (teen):</b> (1) <b>FIFO</b> inventory-management system, (2) warehouses mein sahi <b>climate control</b>, (3) <b>demand forecasting</b> se production ko demand ke saath match karna.</p>
+    <p class="sm"><b>④ Risks (do):</b> (1) savings aane se pehle upfront kharcha, (2) forecasting galat hua to stock-out.</p>
+    <p class="sm"><b>⑤ Next steps (do):</b> (1) warehouses ka audit, (2) SKU / location ke hisaab se loss ka size nikaalna.</p>
+  </div>
+  <p class="xs" style="text-align:right">*Ye sample script interviewer ke feedback ke basis pe banayi hai; video mein exact aisa nahi bola gaya.</p>
+
+  <div class="row">
+    <div class="box r cloud"><h4>Tip:</h4><p class="sm">Bolte waqt numbers bolo: "<b>Teen</b> recommendations hain. <b>Pehli</b>… <b>Doosri</b>…" Isse tum structured lagte ho.</p></div>
+    <div class="box r d"><h4>Likhna hai ya nahi?</h4><p class="sm">Final rec <b>verbal</b> hoti hai, likhne ki zaroorat nahi. Pen <b>brainstorming</b> ke waqt ready rakho, warna achhe ideas bhool jaoge.</p></div>
+  </div>
+</section>
+
+<!-- ====================== PAGE 8 ====================== -->
+<section class="page">
+  <div class="top"><span class="pg r">PAGE 8 of 8</span><span class="hd r">CASE NOTES: BCG CookieCo (Profitability)</span></div>
+  <div class="title r thick">Feedback + Key Takeaways</div>
+
+  <span class="sec r">1. Interviewer Ka Scorecard (Out of 4)</span>
+  <table class="sm">
+    <tr><th>Area</th><th style="width:70px">Score</th><th>Kya achha / kya sudhaarna</th></tr>
+    <tr><td>Case Recap</td><td class="n">3.5</td><td>Clear, concise ✔ + "macro / cost issue?" wala context add karo</td></tr>
+    <tr><td>Clarifying Questions</td><td class="n">3</td><td>Achhe sawaal ✔, par <b>kyun</b> pooch rahe ho wo bhi batao; rush mat karo</td></tr>
+    <tr><td>Structure</td><td class="n">3</td><td>3 buckets ✔. Depth kam; costs pehle; MECE</td></tr>
+    <tr><td>Case Math / Exhibit</td><td class="n">3</td><td>$ vs % ka confusion; logic linear rakho; khud lead karo</td></tr>
+    <tr><td>Creative / Brainstorm</td><td class="n">3</td><td>Problems ≠ solutions; brainstorm likho</td></tr>
+    <tr><td>Final Recommendation</td><td class="n">2.5</td><td>Story format + numbered risks / next steps</td></tr>
+  </table>
+  <div class="box r d sm"><b>Overall:</b> "Really good job": insightful tha aur insights ko layer kar raha tha. <b>Ed ka self-review:</b> 1–2 baar pivot karna pada (achhi practice); solutions aur zyada list kar sakta tha.</div>
+
+  <span class="sec r">2. Key Takeaways (Interview Se Pehle Padho!)</span>
+  <div class="c2">
+    <ol class="sm box r">
+      <li>Profitability + growing market → <b>hypothesis jaldi bolo</b> (shayad cost).</li>
+      <li>Har clarifying question ke saath <b>context</b> do.</li>
+      <li>Structure <b>hypothesis-led</b>, <b>deep</b>, <b>MECE</b>.</li>
+      <li>Exhibit: pehle <b>units</b> ($M ≠ %), phir % math bolke karo.</li>
+    </ol>
+    <ol class="sm box r" start="5">
+      <li><b>Jo poocha wahi answer</b> karo (solution ≠ cause).</li>
+      <li>Brainstorm <b>likho</b>; pen ready rakho.</li>
+      <li>Final rec: <b>context → finding → numbered recs → risks → next steps</b>.</li>
+      <li>Naya data aaye to <b>pivot</b> karne se mat ghabrao.</li>
+    </ol>
+  </div>
+
+  <span class="sec r">3. Sochne Ka Time Maangna: Theek Hai Ya Nahi?</span>
+  <div class="c3">
+    <div class="box r ctr"><h4>McKinsey</h4><p class="big">✔ Haan</p><p class="xs">Time maangna normal hai</p></div>
+    <div class="box r thick ctr"><h4>BCG</h4><p class="big">✗ Usually nahi</p><p class="xs">Conversational hota hai</p></div>
+    <div class="box r ctr"><h4>Bain</h4><p class="big">~ Maybe</p><p class="xs">Dono tarah practice karo</p></div>
+  </div>
+  <div class="box r cloud sm"><b>Golden rule:</b> poochna hamesha theek hai, par "na" sunne ke liye ready raho. <b>Ek baar "na" bola to dobara mat poocho.</b></div>
+
+  <div class="flex" style="justify-content:center; margin-top:2px">
+    <svg class="ic l"><use href="#i-target"/></svg>
+    <div class="box r thick ctr"><span class="big">Hypothesis pehle → Data se check → Structured ending</span></div>
+  </div>
+
+  <div class="src r">Source: "BCG Case Interview Example – CookieCo" (mock interview video)</div>
+</section>
+
+</body>
+</html>
